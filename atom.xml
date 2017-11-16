@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-05T12:27:20.847Z</updated>
+  <updated>2017-11-16T11:59:50.219Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>What is Numpy</title>
+    <link href="http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/"/>
+    <id>http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/</id>
+    <published>2017-11-16T12:00:30.500Z</published>
+    <updated>2017-11-16T11:59:50.219Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="What-is-Numpy"><a href="#What-is-Numpy" class="headerlink" title="What is Numpy"></a>What is Numpy</h1><blockquote><p><code>Numpy</code>是Python科学计算的基本包，提供对于多维数组（矩阵）等各种计算，比如c = a * b，a、b均为矩阵，可以对其进行直接计算，不用使用循环遍历。<br>本机测试计算速度为for循环遍历计算的500+倍。例子如下：目前找不到源网页，直接粘上例子。</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import numpy as np </div><div class="line">import time</div><div class="line">#from timeit import timeit</div><div class="line"></div><div class="line">a = np.random.rand(1000000)</div><div class="line">b = np.random.rand(1000000)</div><div class="line"></div><div class="line">time_s = time.time()</div><div class="line">c = np.dot(a, b)</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div><div class="line"></div><div class="line">c = 0</div><div class="line">time_s = time.time()</div><div class="line">for i in range(len(a)):</div><div class="line">c += a[i] * b[i]</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div></pre></td></tr></table></figure><h2 id="矢量化-Vectorization"><a href="#矢量化-Vectorization" class="headerlink" title="矢量化(Vectorization)"></a>矢量化(Vectorization)</h2><blockquote><p>上面的例子是矢量化的例子（Vectorization），包含以下优点：</p><ul><li>代码更简洁</li><li>更少的代码通常意味着更少的错误</li><li>代码运行更接近标准的数学符号，封装了具体的困难的运算，如上np.dot(a, b)直接计算两个矩阵的积。</li><li>矢量化导致更多的“Pythonic”(网络解释为很Python的Python代码)代码。如果没有向量化，我们的代码将会效率很低，难以读取for循环。</li></ul></blockquote><h2 id="广播-Broadcasting"><a href="#广播-Broadcasting" class="headerlink" title="广播(Broadcasting)"></a>广播(Broadcasting)</h2><blockquote><p>广播是用于描述操作的隐式逐个元素行为的术语<br>大概意思就是比如做矩阵的运算，a为一维矩阵，b为标量，如果做计算<code>a + b</code>，会自动的将a的元素都加上b（我的简单理解）</p></blockquote><h1 id="源网站"><a href="#源网站" class="headerlink" title="源网站"></a>源网站</h1><blockquote><p><a href="http://python.usyiyi.cn" title="Numpy 中文API" target="_blank" rel="external">Numpy 中文 API</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;What-is-Numpy&quot;&gt;&lt;a href=&quot;#What-is-Numpy&quot; class=&quot;headerlink&quot; title=&quot;What is Numpy&quot;&gt;&lt;/a&gt;What is Numpy&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Numpy&lt;/
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="http://yoursite.com/categories/Python/"/>
+    
+    
+      <category term="Learn Numpy" scheme="http://yoursite.com/tags/Learn-Numpy/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 git rm --cached filename 删除提交的文件</title>
