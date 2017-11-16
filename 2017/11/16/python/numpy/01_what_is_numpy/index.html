@@ -222,7 +222,7 @@
 
     
         <meta property="article:published_time" content="Thu Nov 16 2017 20:00:30 GMT+0800" />
-        <meta property="article:modified_time" content="Thu Nov 16 2017 19:59:50 GMT+0800" />
+        <meta property="article:modified_time" content="Thu Nov 16 2017 20:15:45 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -249,7 +249,7 @@
     "mainEntityOfPage": "http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html",
     "headline": "What is Numpy",
     "datePublished": "Thu Nov 16 2017 20:00:30 GMT+0800",
-    "dateModified": "Thu Nov 16 2017 19:59:50 GMT+0800",
+    "dateModified": "Thu Nov 16 2017 20:15:45 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -473,6 +473,9 @@
 <p><code>Numpy</code>是Python科学计算的基本包，提供对于多维数组（矩阵）等各种计算，比如c = a * b，a、b均为矩阵，可以对其进行直接计算，不用使用循环遍历。<br>本机测试计算速度为for循环遍历计算的500+倍。例子如下：目前找不到源网页，直接粘上例子。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import numpy as np </div><div class="line">import time</div><div class="line">#from timeit import timeit</div><div class="line"></div><div class="line">a = np.random.rand(1000000)</div><div class="line">b = np.random.rand(1000000)</div><div class="line"></div><div class="line">time_s = time.time()</div><div class="line">c = np.dot(a, b)</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div><div class="line"></div><div class="line">c = 0</div><div class="line">time_s = time.time()</div><div class="line">for i in range(len(a)):</div><div class="line">	c += a[i] * b[i]</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div></pre></td></tr></table></figure>
+<blockquote>
+<p>下图所示<br><img src="/img/python/vectorization.png" alt="vectorization"></p>
+</blockquote>
 <h2 id="矢量化-Vectorization"><a href="#矢量化-Vectorization" class="headerlink" title="矢量化(Vectorization)"></a>矢量化(Vectorization)</h2><blockquote>
 <p>上面的例子是矢量化的例子（Vectorization），包含以下优点：</p>
 <ul>
