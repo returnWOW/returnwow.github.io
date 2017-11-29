@@ -37,7 +37,7 @@
     
     <title>
         
-            What is Numpy | 
+            Numpy基础 | 
         
         LKJ Hexo Blog
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="LKJ">
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content="Blog,Learn Numpy">
+    <meta name="keywords" content="Blog,Numpy">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -215,18 +215,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="What is Numpy | LKJ Hexo Blog">
+    <meta property="og:title" content="Numpy基础 | LKJ Hexo Blog">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="Blog">
-    <meta property="og:article:tag" content="Learn Numpy"> 
+    <meta property="og:article:tag" content="Numpy"> 
 
     
-        <meta property="article:published_time" content="Thu Nov 16 2017 20:00:30 GMT+0800" />
-        <meta property="article:modified_time" content="Thu Nov 16 2017 20:15:45 GMT+0800" />
+        <meta property="article:published_time" content="Mon Nov 20 2017 21:51:00 GMT+0800" />
+        <meta property="article:modified_time" content="Tue Nov 28 2017 22:31:44 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="What is Numpy | LKJ Hexo Blog">
+    <meta name="twitter:title" content="Numpy基础 | LKJ Hexo Blog">
     <meta name="twitter:description" content="Blog">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -234,7 +234,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/20/python/numpy/02_quickstart_tutorial/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -246,10 +246,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html",
-    "headline": "What is Numpy",
-    "datePublished": "Thu Nov 16 2017 20:00:30 GMT+0800",
-    "dateModified": "Thu Nov 16 2017 20:15:45 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/20/python/numpy/02_quickstart_tutorial/index.html",
+    "headline": "Numpy基础",
+    "datePublished": "Mon Nov 20 2017 21:51:00 GMT+0800",
+    "dateModified": "Tue Nov 28 2017 22:31:44 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -267,7 +267,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",Learn NumpyBlog",
+    "keywords": ",NumpyBlog",
     "description": "Blog",
 }
 </script>
@@ -333,7 +333,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#What-is-Numpy"><span class="post-toc-number">1.</span> <span class="post-toc-text">What is Numpy</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#矢量化-Vectorization"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">矢量化(Vectorization)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#广播-Broadcasting"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">广播(Broadcasting)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源网站"><span class="post-toc-number">2.</span> <span class="post-toc-text">源网站</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NumPy基础"><span class="post-toc-number">1.</span> <span class="post-toc-text">NumPy基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#属性"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组创建"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">数组创建</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打印数组"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">打印数组</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#reshape改变数组形状"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">reshape改变数组形状</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#基本操作"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#类似的操作会修改当前数组，而不是创建新的数组："><span class="post-toc-number">2.2.</span> <span class="post-toc-text">+= *= 类似的操作会修改当前数组，而不是创建新的数组：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#许多一元操作，求和sum，可以使用ndarray的方法"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">许多一元操作，求和sum，可以使用ndarray的方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape-2-3-）"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape = (2*3)）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通过axis参数，可以指定沿数组的指定轴应用操作"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">通过axis参数，可以指定沿数组的指定轴应用操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#另见"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">另见</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#索引、切片和迭代"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">索引、切片和迭代</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一维数组支持索引，切片和迭代，非常类似于列表和其他序列。"><span class="post-toc-number">2.8.1.</span> <span class="post-toc-text">一维数组支持索引，切片和迭代，非常类似于列表和其他序列。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出："><span class="post-toc-number">2.8.2.</span> <span class="post-toc-text">多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#多维数组迭代是相对于第一个轴进行的。"><span class="post-toc-number">2.8.3.</span> <span class="post-toc-text">多维数组迭代是相对于第一个轴进行的。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#形状操作"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">形状操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#复制和视图"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">复制和视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#函数和方法概述"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">函数和方法概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他基础"><span class="post-toc-number">2.12.</span> <span class="post-toc-text">其他基础</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#广播规则"><span class="post-toc-number">2.12.1.</span> <span class="post-toc-text">广播规则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#花式索引技巧"><span class="post-toc-number">2.12.2.</span> <span class="post-toc-text">花式索引技巧</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#函数"><span class="post-toc-number">2.12.3.</span> <span class="post-toc-text">函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线性代数-基础"><span class="post-toc-number">2.12.4.</span> <span class="post-toc-text">线性代数 基础</span></a></li></ol></li></ol></li></ol>
     </ul>
     
 
@@ -365,7 +365,7 @@
         
     
             <p class="article-headline-p">
-                What is Numpy
+                Numpy基础
             </p>
         </div>
 
@@ -384,7 +384,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>LKJ</strong>
-        <span>11月 16, 2017</span>
+        <span>11月 20, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -408,7 +408,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Learn-Numpy/">Learn Numpy</a>
+        <a class="post_tag-link" href="/tags/Numpy/">Numpy</a>
     </ul>
     
 
@@ -424,7 +424,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=What is Numpy&url=http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Numpy基础&url=http://yoursite.com/2017/11/20/python/numpy/02_quickstart_tutorial/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -442,7 +442,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html&title=What is Numpy" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2017/11/20/python/numpy/02_quickstart_tutorial/index.html&title=Numpy基础" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -451,7 +451,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=LKJ Hexo Blog&title=What is Numpy&summary=Blog&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/11/16/python/numpy/01_what_is_numpy/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=LKJ Hexo Blog&title=Numpy基础&summary=Blog&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/11/20/python/numpy/02_quickstart_tutorial/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -469,27 +469,210 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h1 id="What-is-Numpy"><a href="#What-is-Numpy" class="headerlink" title="What is Numpy"></a>What is Numpy</h1><blockquote>
-<p><code>Numpy</code>是Python科学计算的基本包，提供对于多维数组（矩阵）等各种计算，比如c = a * b，a、b均为矩阵，可以对其进行直接计算，不用使用循环遍历。<br>本机测试计算速度为for循环遍历计算的500+倍。例子如下：目前找不到源网页，直接粘上例子。</p>
+        <h1 id="NumPy基础"><a href="#NumPy基础" class="headerlink" title="NumPy基础"></a>NumPy基础</h1><blockquote>
+<p>NumPy的主要对象是同类型的多维数组，是一张表，所有元素（通常是数字）的类型都相同。<br>维度称为axes，axes的数目为rank。如下rank为2（2维的），第一维度axes长度为2，第二维度axes长度为3.<br><code>[[ 1., 0., 0.],</code><br><code>[ 0., 1., 2.]]</code><br>NumPy的数组的类称为ndarray。Python的数组提供较少的功能，而ndarray一下重要的属性。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import numpy as np </div><div class="line">import time</div><div class="line">#from timeit import timeit</div><div class="line"></div><div class="line">a = np.random.rand(1000000)</div><div class="line">b = np.random.rand(1000000)</div><div class="line"></div><div class="line">time_s = time.time()</div><div class="line">c = np.dot(a, b)</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div><div class="line"></div><div class="line">c = 0</div><div class="line">time_s = time.time()</div><div class="line">for i in range(len(a)):</div><div class="line">	c += a[i] * b[i]</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div></pre></td></tr></table></figure>
-<blockquote>
-<p>下图所示<br><img src="/img/python/vectorization.png" alt="vectorization"></p>
-</blockquote>
-<h2 id="矢量化-Vectorization"><a href="#矢量化-Vectorization" class="headerlink" title="矢量化(Vectorization)"></a>矢量化(Vectorization)</h2><blockquote>
-<p>上面的例子是矢量化的例子（Vectorization），包含以下优点：</p>
+<h2 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h2><blockquote>
 <ul>
-<li>代码更简洁</li>
-<li>更少的代码通常意味着更少的错误</li>
-<li>代码运行更接近标准的数学符号，封装了具体的困难的运算，如上np.dot(a, b)直接计算两个矩阵的积。</li>
-<li>矢量化导致更多的“Pythonic”(网络解释为很Python的Python代码)代码。如果没有向量化，我们的代码将会效率很低，难以读取for循环。</li>
+<li>ndarray.ndim：数组的axes（维度）的个数，维度的数量称为rank。</li>
+<li>ndarray.shape：数组的维度。这是一个整数元组，<code>(n, m)</code>表示一个n行，m列的矩阵。</li>
+<li>ndarray.size：为shape元素的乘积，其实就是矩阵元素个数。</li>
+<li>ndarray.dtype：描述矩阵中元素的类型的对象。可以使用Python标准的类型，也提供其他类型，例如：numpy.int32、numpy.int16和numpy.float64。</li>
+<li>ndarray.itemsize：数组中每个元素的字节大小。例如float64字节数为8。</li>
+<li>ndarray.data：该缓冲区包含数组的实际元素。通常不适用这个，我们一般使用索引进行访问（前面矢量化又说不要遍历，后续看看是怎么回事）。</li>
+</ul>
+<p>打开中文API查看示例：<a href="http://python.usyiyi.cn/translate/NumPy_v111/user/quickstart.html" title="示例" target="_blank" rel="external">属性示例</a></p>
+</blockquote>
+<h2 id="数组创建"><a href="#数组创建" class="headerlink" title="数组创建"></a>数组创建</h2><blockquote>
+<p>有几种方法来创建数组</p>
+<ul>
+<li>可以使用array函数从常规的Python列表或元组中创建数组，得到的数组类型从序列中元素的类型推到而出。<br><code>&gt;&gt;&gt; numpy.array([3, 4, 5])</code></li>
+<li>array函数传入列表的列表产生2维阵列，同理3维。<br><code>&gt;&gt;&gt; numpy.array([1, 2, 3], [4, 5, 6])</code><br><code>array([[1, 2, 3]</code><br><code>[4, 5, 6]</code><br><code>])</code><blockquote>
+<ul>
+<li>数组的类型可以在创建的时候指定<br><code>&gt;&gt;&gt; numpy.array([1, 2, 3], dtype=complex)</code> #元素为复数形式 1. + 0.j</li>
 </ul>
 </blockquote>
-<h2 id="广播-Broadcasting"><a href="#广播-Broadcasting" class="headerlink" title="广播(Broadcasting)"></a>广播(Broadcasting)</h2><blockquote>
-<p>广播是用于描述操作的隐式逐个元素行为的术语<br>大概意思就是比如做矩阵的运算，a为一维矩阵，b为标量，如果做计算<code>a + b</code>，会自动的将a的元素都加上b（我的简单理解）</p>
+</li>
+<li>通常数组的元素是位置的，所有NumPy提供创建具体初始占位符的数组，减少数组增长的必要。<blockquote>
+<ul>
+<li>函数zeros创建一个由0组成的数组；</li>
+<li>函数ones创建一个由1数组的数组；</li>
+<li>函数empty内容是随机的并且取决于存储器的状态，元素默认类型是float64。</li>
+</ul>
 </blockquote>
-<h1 id="源网站"><a href="#源网站" class="headerlink" title="源网站"></a>源网站</h1><blockquote>
-<p><a href="http://python.usyiyi.cn" title="Numpy 中文API" target="_blank" rel="external">Numpy 中文 API</a></p>
+</li>
+<li>为了创建数组序列，NumPy提供了类似于range的函数，返回数组而不是列表。<blockquote>
+<p><code>&gt;&gt;&gt; numpy.arange(1, 10, 2)</code> #使用如上的reshape函数可以改变形状。起始为1步长为2。</p>
+</blockquote>
+</li>
+<li>当arange与浮点参数一起使用时，由于浮点数的精度是有限的，通常不可能预测获得的元素数量。出于这个原因，通常最好使用函数linspace，它接收我们想要的元素数量而不是步长作为参数：<br><code>&gt;&gt;&gt; numpy.linspace(1, 2, 9)</code> # 1到二之间的9个数，感觉是平均分配的样子。步长0.125<br>‘&gt;&gt;&gt; numpy.sin(numpy.linspace(0, 2*pi, 100))’ #求sin。<br>其他函数：<br>array, zeros, zeros_like, ones, ones_like, empty, empty_like, arange,<br>linspace, numpy.random.rand, numpy.random.randn, fromfunction, fromfile</li>
+</ul>
+</blockquote>
+<h2 id="打印数组"><a href="#打印数组" class="headerlink" title="打印数组"></a>打印数组</h2><blockquote>
+<p>当打印数组时，NumPy以类似于嵌套列表的方式显示它，但是使用以下布局：</p>
+<ul>
+<li>最后一个axes从左到右打印，</li>
+<li>第二个到最后一个从上到下打印，</li>
+<li>其余的也从上到下打印，每个切片与下一个用空行分开</li>
+<li>如果数组太大，会跳过中间的部分，只打印边角部分。<blockquote>
+<ul>
+<li>如果需要强制打印整个数组，可以使用set_printoptions来更改打印选项<br><code>numpy.set_printoptions(threshold=&#39;nan&#39;)</code> #官方api说传入的是int值，nan目前不知道什么意思：后面查看可以传入numpy.nan，而非str类型</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<h3 id="reshape改变数组形状"><a href="#reshape改变数组形状" class="headerlink" title="reshape改变数组形状"></a>reshape改变数组形状</h3><blockquote>
+<ul>
+<li><code>a.ravel()</code> #平坦化序列，比如3 * 4的矩阵，变成一维矩阵。</li>
+<li><code>a.reshape(x, y)</code> #转变形状到x*y 元素需要支持转换该形状才行，如果y=-1则会自动计算维度。</li>
+<li><code>a.T</code> #转置 transposed</li>
+<li><code>numpy.resize</code>方法直接改变数组本身</li>
+</ul>
+</blockquote>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。"><a href="#数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。" class="headerlink" title="数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。"></a>数组上的算术运算符使用元素基本，将创建一个新数组并用结果填充，差不多就是对应到每个元素，然后返回计算结果。</h2><blockquote>
+<p><code>&gt;&gt;&gt; a = numpy.array([20, 30, 40, 50])</code><br><code>&gt;&gt;&gt; b = numpy.arange(4)</code></p>
+<ul>
+<li><code>&gt;&gt;&gt; c = a - b</code> #对应求其差值</li>
+<li><code>&gt;&gt;&gt; b**2</code> #b元素都乘2</li>
+<li><code>&gt;&gt;&gt; 10*np.sin(a)</code> #对a每个元素求sin，并乘10倍值。</li>
+<li><code>&gt;&gt;&gt; a &lt; 35</code> #对a元素做判断，返回boolean矩阵。</li>
+<li>dot函数做矩阵的乘法：a.dot(b) np.dot(a, b)</li>
+<li>a * b 是对a和b对应位置的元素做乘积</li>
+</ul>
+</blockquote>
+<h2 id="类似的操作会修改当前数组，而不是创建新的数组："><a href="#类似的操作会修改当前数组，而不是创建新的数组：" class="headerlink" title="+= *= 类似的操作会修改当前数组，而不是创建新的数组："></a>+= *= 类似的操作会修改当前数组，而不是创建新的数组：</h2><blockquote>
+<ul>
+<li>‘&gt;&gt;&gt; a = np.ones((2,3), dtype=int)’</li>
+<li><code>&gt;&gt;&gt; b = np.random.random((2, 3))</code></li>
+<li><code>&gt;&gt;&gt; a *= 3</code></li>
+<li><code>&gt;&gt;&gt; b += a</code></li>
+<li><code>&gt;&gt;&gt; a += b</code> #报错， float64 to int32</li>
+</ul>
+</blockquote>
+<h2 id="不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。"><a href="#不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。" class="headerlink" title="不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。"></a>不同类型的数组操作，结果数组的类型对应更精确的数组，向上转型。</h2><blockquote>
+<ul>
+<li>比如int32 和 float64计算 结果类型为float64</li>
+</ul>
+</blockquote>
+<h2 id="许多一元操作，求和sum，可以使用ndarray的方法"><a href="#许多一元操作，求和sum，可以使用ndarray的方法" class="headerlink" title="许多一元操作，求和sum，可以使用ndarray的方法"></a>许多一元操作，求和sum，可以使用ndarray的方法</h2><blockquote>
+<ul>
+<li><code>sum(), max(), min()</code></li>
+</ul>
+</blockquote>
+<h2 id="默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape-2-3-）"><a href="#默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape-2-3-）" class="headerlink" title="默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape = (2*3)）"></a>默认的这些操作适用于数组，就像一个数字列表求最大值，不管其形状（shape = (2*3)）</h2><h2 id="通过axis参数，可以指定沿数组的指定轴应用操作"><a href="#通过axis参数，可以指定沿数组的指定轴应用操作" class="headerlink" title="通过axis参数，可以指定沿数组的指定轴应用操作"></a>通过axis参数，可以指定沿数组的指定轴应用操作</h2><blockquote>
+<ul>
+<li><code>b.sum(axis=0)</code> # 每列求和</li>
+<li><code>b.sum(axis=1)</code> # 每行求和</li>
+<li><code>b.cumsum(axis=1)</code> # 沿着行累积和，相反沿着列累积和</li>
+</ul>
+</blockquote>
+<h2 id="另见"><a href="#另见" class="headerlink" title="另见"></a>另见</h2><blockquote>
+<p>all, any, apply_along_axis, argmax, argmin, argsort, average, bincount, ceil, clip, conj, corrcoef, cov, cross, cumprod, cumsum, diff, dot, floor, inner, inv, lexsort, max, maximum, mean, median, min, minimum, nonzero, outer, prod, re, round, sort, std, sum, trace, transpose, var, vdot, vectorize, where</p>
+<ul>
+<li>all：是判断所以元素是否都为True，可以定义axis来沿着某个轴判断。</li>
+<li>any：和all相反，判断是否有一个为Ture，是返回True，否返回False，可以传入axis 例如：b.any(0)，纵轴是否有为真的。</li>
+<li><p>apply_along_axis(func, axis, arr)：将arr按照axis定义，行或者列取出作用在func上，并返回一个列表。</p>
+<blockquote>
+<p>如果上述返回标量，则返回于源arr相同形状(shape)。比如传输sorted进行排序，返回还是列表。</p>
+</blockquote>
+</li>
+<li><p>argmax：查找最大值，返回索引，支持axis轴选择。如果多个大值，就返回第一次遇到的。</p>
+</li>
+<li>argmin：和max相反。</li>
+<li>argsort：排序，返回排序完的索引值。可以选择算法。选择键排序。</li>
+<li>mean：平均值，可以按轴进行。axis</li>
+<li>diff：计算差分，out[n] = a[n+1] - a[n]，可以按轴进行。</li>
+<li>vdot：计算点积。</li>
+<li>还有很多函数，先不看了。</li>
+</ul>
+</blockquote>
+<h2 id="索引、切片和迭代"><a href="#索引、切片和迭代" class="headerlink" title="索引、切片和迭代"></a>索引、切片和迭代</h2><h3 id="一维数组支持索引，切片和迭代，非常类似于列表和其他序列。"><a href="#一维数组支持索引，切片和迭代，非常类似于列表和其他序列。" class="headerlink" title="一维数组支持索引，切片和迭代，非常类似于列表和其他序列。"></a>一维数组支持索引，切片和迭代，非常类似于列表和其他序列。</h3><blockquote>
+<ul>
+<li>a[1:2]，其中<code>**</code>是次方，**(1/3) 求根号3</li>
+</ul>
+</blockquote>
+<h3 id="多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出："><a href="#多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出：" class="headerlink" title="多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出："></a>多维数组每个轴可以有一个索引。这些索引以逗号分隔的元组给出：</h3><blockquote>
+<p>比如b[2,3]表示3行4列的元素，b[0:3, 1]表示行数是0,1,2的第2列，如果1数字缺失，则认为是全部列。<br>如果维度大于3，比如维度（轴，rank）为5的情况，x[1,2,:,:,:]可以等效为x[1,2,…]</p>
+<ul>
+<li>x[1,2,…]等效于x[1,2,:,:,:]</li>
+<li>x[…,3]到x[:,:,:,:,3]</li>
+<li>x[4,…,5,:]到x[4,:,:,5,:]<br>例子：y[1:5:2,::3]指的是1-4行间隔为2行，列数间隔为3进行抽取。<br>避免迭代使用索引提高性能。<br>可以使用一个数组来索引数组，提高的索引必须是索引值，比如a[np.array([1,2,3])] 索引a中的索引为1,2,3的元素。<br>并且索引数组可以是多维的生成的矩阵维度和索引一致，a[np.array([[1,2], [3,4]])]，二维矩阵，1,2,3,4对应为a一维矩阵的索引。</li>
+<li>Boolean型索引，比如<br><code>&gt;&gt;&gt; y = np.arange(35).reshape(5,7)</code><br><code>&gt;&gt;&gt; b = y &gt; 22</code><br><code>&gt;&gt;&gt; y[b] # 这样就将y里边的大于22的数索引出来了，但是维度只有一维，并且如果索引的布尔数组和y具有相同的形状</code><br>通常，当布尔数组具有比被索引的数组更少的维度时，这等同于y [b，…]，这意味着y被索引为b，然后是多个：如同填充y。因此，结果的形状是包含布尔数组的True元素的数目的一个维度，后面是被索引的数组的剩余维度。<br>组合索引和切片，感觉就是行和列的索引，三维的话相当于两个数组，就分别对两个进行索引</li>
+<li><code>y[1:3, 2:3] #类似的就是1-2行并且列是2列</code><br>结构化索引工具<br><code>&gt;&gt;&gt; y.shape</code><br><code>(5, 7)</code><br><code>&gt;&gt;&gt; y[:,np.newaxis,:].shape # np.newaxis 对象来新建一个维度&#39;</code>(5, 1, 7)`</li>
+<li>可以使用索引来改变相应位置的值<br><code>y[2:7] = 1 #将2-6位置的数更改为1</code><br><code>y[2:7] = np.arange(5) #或者直接使用数组的形式</code><br>如果高类型分配给低类型的，会转型，损失精度，或者抛出错误<br>下面的一个例子比较特殊：<br><code>&gt;&gt;&gt; x = np.arange(0, 50, 10)</code><br><code>&gt;&gt;&gt; x</code><br><code>array([ 0, 10, 20, 30, 40])</code><br><code>&gt;&gt;&gt; x[np.array([1, 1, 3, 1])] += 1</code><br><code>&gt;&gt;&gt; x</code><br><code>array([ 0, 11, 20, 31, 40])</code><br>实际上我们认为1位置的数应该增加3才对，但是最终只增加1，其实是我们每次计算都采用了临时数组的方式，导致最终只增加1.</li>
+<li>Ellipsis 等同于 ‘…’</li>
+<li>元组不像列表索引那样会自动处理，如下例子：<br><code>&gt;&gt;&gt; z[[1,1,1,1]] # produces a large array</code><br><code>array([[[[27, 28, 29],</code><br><code>[30, 31, 32], ...</code><br><code>&gt;&gt;&gt; z[(1,1,1,1)] # returns a single value</code><br><code>40</code></li>
+</ul>
+</blockquote>
+<h3 id="多维数组迭代是相对于第一个轴进行的。"><a href="#多维数组迭代是相对于第一个轴进行的。" class="headerlink" title="多维数组迭代是相对于第一个轴进行的。"></a>多维数组迭代是相对于第一个轴进行的。</h3><blockquote>
+<p>可以使用flat，是一个迭代器。<br>如果使用x[0][2]会降低性能。因为2索引需要在前面0索引创建的数组上面继续操作。<br>另见indexing。</p>
+</blockquote>
+<h2 id="形状操作"><a href="#形状操作" class="headerlink" title="形状操作"></a>形状操作</h2><blockquote>
+<p>以下的命令不会修改数组，只会返回新的数组</p>
+<ul>
+<li>ravel 返回连续的平坦的数组，降成一维</li>
+<li>reshape 修改形状</li>
+<li>T 转置<br>修改数组本身</li>
+<li>resize：对应的reshape是返回修改的数组<br>将不同的数组堆叠</li>
+<li>vstack</li>
+<li>hstack h v 分别对应水平方向和垂直方向。</li>
+<li>column_stack</li>
+<li>row_stack column 和 row 分别对应，并且这两个方法允许1D的数组堆叠到2D数组中<br>将数组分隔成几个小的数组</li>
+<li><code>np.hsplit(a, 3) #将a划分为3个 h是水平</code></li>
+<li><code>np.hsplit(a, (3, 4)) #将列为3-4但是不等于4的索引分隔开来</code> </li>
+<li>同理vsplit是垂直划分</li>
+<li>array_split 可以指定某个轴进行划分</li>
+</ul>
+</blockquote>
+<h2 id="复制和视图"><a href="#复制和视图" class="headerlink" title="复制和视图"></a>复制和视图</h2><blockquote>
+<p>当计算和操作数组时，它们的数据有时被复制到新的数组中，有时不复制。这通常是初学者的混乱的来源。有三种情况：</p>
+<ul>
+<li>完全不复制<br>简单赋值不会创建数组对象或其数据的拷贝：如果将b = a 那么b和a指向的是同一个数组，改变b，a也跟着改变。<br>可变对象传递到函数引用，函数不会复制。</li>
+<li>视图或浅复制<br>不同的数组对象可以共享相同的数据。view方法创建一个新数组对象，该对象看到相同的数据。<br><code>c=a.view()</code>, 这样改变<code>c.shape = (2,6)</code>，a的形状不会改变，但是如果<code>c[0,4] = 1234</code>，a的相应位置就会赋值为1234<br><code>c.base is a = True</code><br>对数组切片返回的也是视图</li>
+<li>深复制<br><code>d = a.copy()</code><br>这样d就是一个新的数组</li>
+</ul>
+</blockquote>
+<h2 id="函数和方法概述"><a href="#函数和方法概述" class="headerlink" title="函数和方法概述"></a>函数和方法概述</h2><blockquote>
+<p>这里是一些有用的NumPy函数和方法名称按类别排序的列表。有关完整列表，请参见Routines。</p>
+<ul>
+<li>数组创建<br><code>arange, array, copy, empty, empty_like, eye, fromfile, fromfunction, identity, linspace, logspace, mgrid, ogrid, ones, ones_like, r, zeros, zeros_like</code></li>
+<li>转换<br><code>ndarray.astype，atleast_1d，atleast_2d，atleast_3d，mat</code></li>
+<li>操纵<br><code>array_split, column_stack, concatenate, diagonal, dsplit, dstack, hsplit, hstack, ndarray.item, newaxis, ravel, repeat, reshape, resize, squeeze, swapaxes, take, transpose, vsplit, vstack</code></li>
+<li>问题<br><code>all，any，nonzero，where</code></li>
+<li>顺序<br><code>argmax, argmin, argsort, max, min, ptp, searchsorted, sort</code></li>
+<li>操作<br><code>choose, compress, cumprod, cumsum, inner, ndarray.fill, imag, prod, put, putmask, real, sum</code></li>
+<li>基本统计<br><code>cov，mean，std，var</code><br>基本线性代数<br><code>cross，dot，outer，linalg.svd，vdot</code></li>
+</ul>
+</blockquote>
+<h2 id="其他基础"><a href="#其他基础" class="headerlink" title="其他基础"></a>其他基础</h2><h3 id="广播规则"><a href="#广播规则" class="headerlink" title="广播规则"></a>广播规则</h3><blockquote>
+<ul>
+<li>Broadcasting允许通用函数以有意义的方式处理具有不完全相同形状的输入。</li>
+<li>Broadcasting的第一个规则是，如果所有输入数组不具有相同数量的维度，则“1”将被重复地添加到较小数组的形状，直到所有数组具有相同数量的维度。</li>
+<li>Broadcasting的第二个规则确保沿着特定维度具有大小为1的数组表现得好像它们具有沿着该维度具有最大形状的数组的大小。假定数组元素的值沿“Broadcasting”数组的该维度相同。</li>
+</ul>
+</blockquote>
+<h3 id="花式索引技巧"><a href="#花式索引技巧" class="headerlink" title="花式索引技巧"></a>花式索引技巧</h3><blockquote>
+<p>NumPy提供了比常规Python序列更多的索引能力。除了通过整数和切片索引之外，如前所述，数组可以由整数数组和布尔数组索引。</p>
+<ul>
+<li>使用索引数组索引<br><code>a[j]</code> <code>j = np.array([1,1,3]) #得出索引a是1,1,3组成的数组</code><br>如果索引的数组是多维的，结果与之对应，<code>j = np.array([[1,2,3], [4, 5, 6]])</code>，结果是形状是<code>(2, 3)</code></li>
+<li>可以对每个维度进行单独索引<br><code>i = np.array([[0,1], [1, 2]])</code><br><code>j = np.array([[2,1], [1, 3]])</code><br><code>a[i, j]</code><br>同样的 <code>l=[i,j]</code> <code>a[l]=a[i,j]</code></li>
+</ul>
+</blockquote>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><blockquote>
+<p>np.ix_[a,b,c] ???雨里雾里<br>np.ufunc.reduce ???云里雾里</p>
+</blockquote>
+<h3 id="线性代数-基础"><a href="#线性代数-基础" class="headerlink" title="线性代数 基础"></a>线性代数 基础</h3><blockquote>
+<p>简单的数组操作</p>
+<ul>
+<li><code>a.transpose() # 矩阵转置</code> </li>
+<li><code>np.linalg.inv(a) # 逆矩阵</code></li>
+<li><code>np.eye(2) # 2*2的矩阵，返回对角线是1其他都是0的矩阵</code></li>
+<li><code>np.dot(i, j) # 求矩阵乘积</code></li>
+<li><code>np.trace(a) # 对a矩阵的对角线值求和</code></li>
+<li><code>np.linalg.solve(a, y) # 解线性方程组 a矩阵对应参数，y对应等于后边的数</code></li>
+<li><code>np.linalg.eig(j) # 特征向量，线性代数当时没有学好</code></li>
+</ul>
 </blockquote>
 
         
@@ -511,7 +694,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/11/20/python/numpy/02_quickstart_tutorial/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/11/29/python/bs4/learn_bs4/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -525,7 +708,7 @@
 
     <!-- Next Nav -->
     
-        <a href="/2017/11/05/git/git_rm_use_cached/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/16/python/numpy/01_what_is_numpy/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

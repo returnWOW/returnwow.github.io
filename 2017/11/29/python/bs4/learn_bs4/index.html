@@ -37,7 +37,7 @@
     
     <title>
         
-            分类: Python | 
+            学习bs4模块 | 
         
         LKJ Hexo Blog
     </title>
@@ -49,7 +49,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="LKJ">
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content="Blog">
+    <meta name="keywords" content="Blog,学习 python bs4">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -215,15 +215,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: Python | LKJ Hexo Blog">
+    <meta property="og:title" content="学习bs4模块 | LKJ Hexo Blog">
     <meta property="og:image" content="http://yoursite.com/img/favicon.png" />
     <meta property="og:description" content="Blog">
-    
+    <meta property="og:article:tag" content="学习 python bs4"> 
 
+    
+        <meta property="article:published_time" content="Wed Nov 29 2017 20:14:07 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Nov 29 2017 20:12:16 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: Python | LKJ Hexo Blog">
+    <meta name="twitter:title" content="学习bs4模块 | LKJ Hexo Blog">
     <meta name="twitter:description" content="Blog">
     <meta name="twitter:image" content="http://yoursite.com/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
@@ -231,13 +234,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/categories/Python/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2017/11/29/python/bs4/learn_bs4/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "http://yoursite.com/2017/11/29/python/bs4/learn_bs4/index.html",
+    "headline": "学习bs4模块",
+    "datePublished": "Wed Nov 29 2017 20:14:07 GMT+0800",
+    "dateModified": "Wed Nov 29 2017 20:12:16 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "LKJ",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "能力越大责任越大,见习"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LKJ Hexo Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",学习 python bs4Blog",
+    "description": "Blog",
+}
+</script>
 
 
     
@@ -271,159 +304,323 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#学习bs4模块"><span class="post-toc-number">1.</span> <span class="post-toc-text">学习bs4模块</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一般属性"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">一般属性</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一般方法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">一般方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查找所有的a标签"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">查找所有的a标签</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象的种类"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">对象的种类</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Tag"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">Tag</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tag重要的属性"><span class="post-toc-number">1.4.1.1.</span> <span class="post-toc-text">Tag重要的属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多值属性"><span class="post-toc-number">1.4.1.2.</span> <span class="post-toc-text">多值属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#可以遍历的字符串"><span class="post-toc-number">1.4.1.3.</span> <span class="post-toc-text">可以遍历的字符串</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#子节点"><span class="post-toc-number">1.4.1.3.1.</span> <span class="post-toc-text">子节点</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BeautifulSoup对象"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">BeautifulSoup对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#搜索文档树"><span class="post-toc-number">1.4.2.1.</span> <span class="post-toc-text">搜索文档树</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#过滤器"><span class="post-toc-number">1.4.2.1.1.</span> <span class="post-toc-text">过滤器</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#SyntaxError-keyword-can’t-be-an-expression"><span class="post-toc-number">2.</span> <span class="post-toc-text">SyntaxError: keyword can’t be an expression</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#foo"><span class="post-toc-number">3.</span> <span class="post-toc-text">[foo!]</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子节点-1"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">子节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父节点"><span class="post-toc-number">3.0.2.</span> <span class="post-toc-text">父节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兄弟节点"><span class="post-toc-number">3.0.3.</span> <span class="post-toc-text">兄弟节点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#回退和前进"><span class="post-toc-number">3.0.4.</span> <span class="post-toc-text">回退和前进</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#像调用-find-all-一样调用tag"><span class="post-toc-number">3.0.5.</span> <span class="post-toc-text">像调用 find_all() 一样调用tag</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--6dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/20/python/numpy/02_quickstart_tutorial/">Numpy基础</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Nu...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/20/python/numpy/02_quickstart_tutorial/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--6dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/16/python/numpy/01_what_is_numpy/">What is Numpy</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/16/python/numpy/01_what_is_numpy/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                学习bs4模块
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>LKJ</strong>
+        <span>11月 29, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/学习-python-bs4/">学习 python bs4</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=学习bs4模块&url=http://yoursite.com/2017/11/29/python/bs4/learn_bs4/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2017/11/29/python/bs4/learn_bs4/index.html&title=学习bs4模块" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=LKJ Hexo Blog&title=学习bs4模块&summary=Blog&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2017/11/29/python/bs4/learn_bs4/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="学习bs4模块"><a href="#学习bs4模块" class="headerlink" title="学习bs4模块"></a>学习bs4模块</h1><blockquote>
+<p>直接在官方网站上面学习</p>
+</blockquote>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
+<p>bs4是一个格式化读取xml，html文档的库<br>可以使xml、html按照标签的形式操作，具体是将HTML文档转换成一个复杂的树形结构。<br>官方推荐lxml来解析HTML<br>所有节点对象可以归纳为4种: Tag , NavigableString , BeautifulSoup , Comment .</p>
+<p>简单使用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">html_doc = &apos;&apos;</div><div class="line">soup = BeautifulSoup(html_doc, &apos;html.parser&apos;)</div><div class="line">print(soup.prettify())  #美化输出，格式化缩进。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="一般属性"><a href="#一般属性" class="headerlink" title="一般属性"></a>一般属性</h2><blockquote>
+<ul>
+<li><code>soup.title</code>：获取页面的标题，包含标签</li>
+<li><code>soup.title.name</code>：获取页面标题标签的内容</li>
+<li><code>soup.title.string</code>：获取页面标题的内容</li>
+<li><code>soup.title.parent.name</code>：父标签名字</li>
+<li><code>soup.p</code>：<code>p</code>是标签名字</li>
+<li><code>soup.p[&#39;class&#39;]</code>：第一个匹配p的标签，成员class</li>
+<li><code>soup.a</code>：同上</li>
+</ul>
+</blockquote>
+<h2 id="一般方法"><a href="#一般方法" class="headerlink" title="一般方法"></a>一般方法</h2><blockquote>
+<ul>
+<li><code>soup.find_all(&#39;a&#39;)</code>：找到所以的<code>a</code>标签</li>
+</ul>
+</blockquote>
+<h3 id="查找所有的a标签"><a href="#查找所有的a标签" class="headerlink" title="查找所有的a标签"></a>查找所有的a标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for link in soup.find_all(&apos;a&apos;):</div><div class="line">    print(link.get(&apos;href&apos;))</div><div class="line">    # http://example.com/elsie</div><div class="line">    # http://example.com/lacie</div><div class="line">    # http://example.com/tillie</div></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><code>soup.get_text()</code>：拿到文档中所有的文字内容，实际测试新浪的首页存在问题，使用html5lib也一致。</li>
+</ul>
+</blockquote>
+<h2 id="对象的种类"><a href="#对象的种类" class="headerlink" title="对象的种类"></a>对象的种类</h2><h3 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h3><blockquote>
+<p><code>Tag</code>对象和XML或HTML原生文档中的tag相同</p>
+</blockquote>
+<h4 id="Tag重要的属性"><a href="#Tag重要的属性" class="headerlink" title="Tag重要的属性"></a>Tag重要的属性</h4><blockquote>
+<ul>
+<li><p><code>name</code><br>每个Tag都有自己的名字，通过name属性来获取，比如<title>xxx</title>，Tag名称就是title<br>如果改变了某个tag的名称，那么将影响当前生成的hml对象文档<br><code>tag.name = &#39;xxx&#39;</code></p>
+</li>
+<li><p><code>Attributes</code><br>一个<code>Tag</code>可能存在属性，属性的操作和字典相同<br>可以直接使用<code>attrs</code>获取全部属性<br>tag的属性可以添加删除或者修改。操作和字典一致。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="多值属性"><a href="#多值属性" class="headerlink" title="多值属性"></a>多值属性</h4><blockquote>
+<p>一个属性可能有多个值，这里返回其列表。<br><code>&lt;p class=&quot;body strikeout&quot;&gt;&lt;/p&gt;</code>：将会返回body和strikeout的列表<br>如果存在多个值，但是HTML定义中并没有定义为多值属性，那么还是返回字符串<br>并且可以传入列表以修改多值属性，传入列表为多值。<br>xml中不包含多值</p>
+</blockquote>
+<h4 id="可以遍历的字符串"><a href="#可以遍历的字符串" class="headerlink" title="可以遍历的字符串"></a>可以遍历的字符串</h4><blockquote>
+<p>字符串常被包含在tag内.Beautiful Soup用 <code>NavigableString</code> 类来包装tag中的字符串<br>节点下的字符串不可以编辑，但是可以替换，使用replace_with(‘xxx’)<br>字符串不支持：contents，string属性或find()方法<br>需要在此之外使用字符串，使用unicode将其转换为普通的Unicode字符串，减少内存占用。</p>
+</blockquote>
+<h5 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h5><blockquote>
+<p><code>soup.body.b</code>：body节点下的b节点</p>
+<ul>
+<li><code>tag.contents</code>：可以将节点下的子节点以列表方式输出。</li>
+<li><code>tag.children</code>：子节点生成器，</li>
+<li><code>descendants</code>：后裔，多所有的子孙节点递归循环，这样会将string也单独提取出来</li>
+<li>节点下的<code>string</code>：如果节点下面存在子节点，并且子节点不是内容节点，那么返回None</li>
+<li><code>strings and stripped_strings</code>：解决了上面的问题，使用这个将打印节点下的所以字符串，其中stripped_strings去除空格</li>
+</ul>
+</blockquote>
+<h3 id="BeautifulSoup对象"><a href="#BeautifulSoup对象" class="headerlink" title="BeautifulSoup对象"></a>BeautifulSoup对象</h3><blockquote>
+<p>表示文档的全部内容大部分时候可以将它当做<code>Tag</code>对象。</p>
+</blockquote>
+<h4 id="搜索文档树"><a href="#搜索文档树" class="headerlink" title="搜索文档树"></a>搜索文档树</h4><blockquote>
+<p>很多搜索方法，这里解释：<code>find()</code>和<code>find_all()</code><br>其它操作方法类似</p>
+</blockquote>
+<h5 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h5><blockquote>
+<ul>
+<li>字符串<br>使用字符串来过滤查找，比如<code>soup.find_all(&#39;a&#39;)</code>来找到<code>a</code>标签</li>
+<li>正则表达式<br>支持正则表达式，比如：<code>soup.find_all(re.compile(&quot;^b&quot;))</code></li>
+<li>列表参数<br>传入列表参数：<code>[&#39;a&#39;, &#39;b&#39;]</code> 找出<code>a</code> <code>b</code>的标签</li>
+<li>True<br>传入<code>True</code>值，那么会找到所有节点，但是没有字符串。</li>
+<li>方法<br>如果没有合适的过滤器，那么可以传入方法，方法接收一个参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def has_class_but_no_id(tag):</div><div class="line">    return tag.has_attr(&apos;class&apos;) and not tag.has_attr(&apos;id&apos;)</div><div class="line"></div><div class="line">def not_lacie(href):</div><div class="line">        return href and not re.compile(&quot;lacie&quot;).search(href)</div><div class="line">soup.find_all(href=not_lacie)</div><div class="line"></div><div class="line">from bs4 import NavigableString</div><div class="line">def surrounded_by_strings(tag):</div><div class="line">    return (isinstance(tag.next_element, NavigableString)</div><div class="line">            and isinstance(tag.previous_element, NavigableString))</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>具体参数 find_all( name , attrs , recursive , string , **kwargs )</p>
+<ul>
+<li>name 用来查找所以tag</li>
+<li>attrs 传入字典</li>
+<li>recursive 传入False只便利直接的子节点</li>
+<li>string 查找内容，页面上的文本内容，可以传入文字，列表，正则表达式，True</li>
+<li>**kwargs 传入关键字参数 比如：id=’xxx’  同时可以过滤多个这样的属性</li>
+<li>limit 限制查找的数量<br>有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:<br>data_soup = BeautifulSoup(‘<div data-foo="value">foo!</div>‘)<br>data_soup.find_all(data-foo=”value”)<h1 id="SyntaxError-keyword-can’t-be-an-expression"><a href="#SyntaxError-keyword-can’t-be-an-expression" class="headerlink" title="SyntaxError: keyword can’t be an expression"></a>SyntaxError: keyword can’t be an expression</h1>但是可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag:<br>data_soup.find_all(attrs={“data-foo”: “value”})<h1 id="foo"><a href="#foo" class="headerlink" title="[foo!]"></a>[<div data-foo="value">foo!</div>]</h1>但标识CSS类名的关键字 class 在Python中是保留字,使用 class 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 class_ 参数搜索有指定CSS类名的tag:</li>
+</ul>
+</blockquote>
+<h3 id="子节点-1"><a href="#子节点-1" class="headerlink" title="子节点"></a>子节点</h3><blockquote>
+<p>一个节点可能包含一个或者多个子节点</p>
+<ul>
+<li>contents and children：返回子节点的列表，后者返回迭代器。</li>
+<li>descendants：后裔，会将字符串也打印出来。</li>
+<li>srting：得到节点下的NavigableString对象</li>
+<li>strings and stripped_strings：得到节点下的所以NString对象，后者会去除空格和空行。</li>
+</ul>
+</blockquote>
+<h3 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h3><blockquote>
+<p>每个节点或者字符串都有父节点</p>
+<ul>
+<li>parent：得到直接父节点</li>
+<li>parents：得到所有的父节点</li>
+</ul>
+</blockquote>
+<h3 id="兄弟节点"><a href="#兄弟节点" class="headerlink" title="兄弟节点"></a>兄弟节点</h3><blockquote>
+<ul>
+<li>next_sipling and previous_sibling：类似遍历兄弟节点</li>
+<li>next_siplings and previous_siblings：当前节点之前或者之后的所有兄弟节点迭代输出</li>
+</ul>
+</blockquote>
+<h3 id="回退和前进"><a href="#回退和前进" class="headerlink" title="回退和前进"></a>回退和前进</h3><blockquote>
+<ul>
+<li>next_element and previous_element：返回当前节点上一个或者下一个被解析对象</li>
+<li>next_elements and previous_elements：对应的就是前后所有被解析的对象，就像HTML对象正在被解析一样</li>
+</ul>
+</blockquote>
+<h3 id="像调用-find-all-一样调用tag"><a href="#像调用-find-all-一样调用tag" class="headerlink" title="像调用 find_all() 一样调用tag"></a>像调用 find_all() 一样调用tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">soup.find_all(&quot;a&quot;)</div><div class="line">soup(&quot;a&quot;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这两行是等价的</p>
+</blockquote>
+
+        
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/11/20/python/numpy/02_quickstart_tutorial/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
