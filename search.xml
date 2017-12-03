@@ -83,8 +83,11 @@
 <li>recursive 传入False只便利直接的子节点</li>
 <li>string 查找内容，页面上的文本内容，可以传入文字，列表，正则表达式，True</li>
 <li>**kwargs 传入关键字参数 比如：id=’xxx’  同时可以过滤多个这样的属性</li>
-<li>limit 限制查找的数量<br>有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:<br>data_soup = BeautifulSoup(‘<div data-foo="value">foo!</div>‘)<br>data_soup.find_all(data-foo=”value”)<h1 id="SyntaxError-keyword-can’t-be-an-expression"><a href="#SyntaxError-keyword-can’t-be-an-expression" class="headerlink" title="SyntaxError: keyword can’t be an expression"></a>SyntaxError: keyword can’t be an expression</h1>但是可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag:<br>data_soup.find_all(attrs={“data-foo”: “value”})<h1 id="foo"><a href="#foo" class="headerlink" title="[foo!]"></a>[<div data-foo="value">foo!</div>]</h1>但标识CSS类名的关键字 class 在Python中是保留字,使用 class 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 class_ 参数搜索有指定CSS类名的tag:</li>
+<li>limit 限制查找的数量<br>有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data_soup = BeautifulSoup(&apos;&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;&apos;)</div><div class="line">data_soup.find_all(data-foo=&quot;value&quot;)</div><div class="line">SyntaxError: keyword can&apos;t be an expression</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>但是可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data_soup.find_all(attrs=&#123;&quot;data-foo&quot;: &quot;value&quot;&#125;)</div><div class="line">[&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;]</div></pre></td></tr></table></figure></p>
+<p>但标识CSS类名的关键字 class 在Python中是保留字,使用 class 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 class_ 参数搜索有指定CSS类名的tag:</p>
 </blockquote>
 <h3 id="子节点-1"><a href="#子节点-1" class="headerlink" title="子节点"></a>子节点</h3><blockquote>
 <p>一个节点可能包含一个或者多个子节点</p>
@@ -118,8 +121,40 @@
 <blockquote>
 <p>这两行是等价的</p>
 </blockquote>
+<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><blockquote>
+<p>find_all是得到所有的结果，有时候我们只需要一个结果，那么直接使用find就行。<br>find_all 加上参数limit = 1，也可以实现，但是返回的结果是列表<br>find没有找到结果的时候返回<code>None</code><br>find方法多次调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html.find(&apos;head&apos;).find(&apos;title&apos;)</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="find-parents-和-find-parent"><a href="#find-parents-和-find-parent" class="headerlink" title="find_parents() 和 find_parent()"></a>find_parents() 和 find_parent()</h3><blockquote>
+<p>搜索当前节点的父节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = html.find(string=&apos;Lacie&apos;) # 找到字符串Lacie</div><div class="line">s.find_parents(&apos;a&apos;) # 字符串节点的父节点</div></pre></td></tr></table></figure></p>
+<p>其实方法就是使用了parent和parents属性进行迭代搜索的</p>
+</blockquote>
+<h3 id="find-next-siblings-和-find-next-sibling"><a href="#find-next-siblings-和-find-next-sibling" class="headerlink" title="find_next_siblings() 和 find_next_sibling()"></a>find_next_siblings() 和 find_next_sibling()</h3><blockquote>
+<p>通过next_siblings属性对当前tag之后的兄弟节点进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; first_link = html.a</div><div class="line">&gt;&gt;&gt; first_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; first_link.find_next_siblings()</div><div class="line">[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a clas</div><div class="line">s=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="find-previous-siblings-和-find-previous-sibling"><a href="#find-previous-siblings-和-find-previous-sibling" class="headerlink" title="find_previous_siblings() 和 find_previous_sibling()"></a>find_previous_siblings() 和 find_previous_sibling()</h3><blockquote>
+<p>和上面类似</p>
+</blockquote>
+<h3 id="find-all-next-和-find-next"><a href="#find-all-next-和-find-next" class="headerlink" title="find_all_next() 和 find_next()"></a>find_all_next() 和 find_next()</h3><blockquote>
+<p>通过next_elements属性对当前tag进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f_link = html.a</div><div class="line">&gt;&gt;&gt; f_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; f_link.find_all_next(&apos;a&apos;)</div><div class="line">[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a clas</div><div class="line">s=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]</div><div class="line">&gt;&gt;&gt; f_link.find_all_next(string=True)</div><div class="line">[&apos;Elsie&apos;, &apos;,\n&apos;, &apos;Lacie&apos;, &apos; and\n&apos;, &apos;Tillie&apos;, &apos;;\nand they lived at the bottom o</div><div class="line">f a well.&apos;, &apos;\n&apos;, &apos;...&apos;, &apos;\n&apos;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="find-all-previous-和-find-previous"><a href="#find-all-previous-和-find-previous" class="headerlink" title="find_all_previous() 和 find_previous()"></a>find_all_previous() 和 find_previous()</h3><blockquote>
+<p>通过previous_element对当前tag进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f_link = html.a</div><div class="line">&gt;&gt;&gt; f_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; f_link.find_all_previous(&apos;title&apos;)</div><div class="line">[&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><blockquote>
+<p>bs4支持大部分的CSS选择器：<a href="https://www.w3.org/TR/CSS2/selector.html" title="CSS Selector" target="_blank" rel="external">CSS Selector</a> <a href="http://www.w3school.com.cn/cssref/css_selectors.asp" title="CSS 选择器" target="_blank" rel="external">w3school</a></p>
+</blockquote>
+<blockquote>
+<p>在 <code>Tag</code> 或 <code>BeautifulSoup</code> 对象的 <code>.select()</code> 方法中传入字符串参数, 即可使用CSS选择器的语法找到tag:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">soup.select(&quot;title&quot;)</div><div class="line"># [&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</div><div class="line"></div><div class="line">soup.select(&quot;p nth-of-type(3)&quot;)</div><div class="line"># [&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;]</div></pre></td></tr></table></figure></p>
+<p>不是很懂这个选择器</p>
+</blockquote>
 ]]></content>
       
+        <categories>
+            
+            <category> Python </category>
+            
+        </categories>
+        
         
         <tags>
             
