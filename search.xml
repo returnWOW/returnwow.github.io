@@ -8,7 +8,10 @@
       <content type="html"><![CDATA[<h1 id="16进制和8进制的问题"><a href="#16进制和8进制的问题" class="headerlink" title="16进制和8进制的问题"></a>16进制和8进制的问题</h1><blockquote>
 <p>今天在网上看到有人在问<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;\x20&apos;</div><div class="line">&apos; &apos;</div><div class="line">&gt;&gt;&gt; &apos;\20&apos;</div><div class="line">&apos;\x10&apos;</div></pre></td></tr></table></figure></p>
 <p>如上，因为这个存在特殊性：<code>\x20</code>对应是10进制是<code>32</code>，而<code>32</code>Ascii码对应的控制字符空格<code>Space</code>，这个一眼就看出来了是16进制，而且也知道是16进制。<br>然而<code>\20</code>就不好解释了，平时接触8进制也较少，刚开始以为是自动转换16进制，但是打印的结果显然推翻了结论，后续还想到<code>\</code>是转义字符，那么<code>\2</code>等有特殊意义。<br>于是开始从<code>\1</code>打印到<code>\10</code>，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;\7&apos;</div><div class="line">&apos;\x07&apos;</div><div class="line">&gt;&gt;&gt; &apos;\8&apos;</div><div class="line">&apos;\\8&apos;</div><div class="line">&gt;&gt;&gt; &apos;\9&apos;</div><div class="line">&apos;\\9&apos;</div><div class="line">&gt;&gt;&gt; &apos;\10&apos;</div><div class="line">&apos;\x08&apos;</div></pre></td></tr></table></figure></p>
-<p>发现<code>\8</code>打印很奇怪，<code>\10</code>则打印16进制的<code>\x08</code>，然后才想到这个是8进制，因为8表示8的话则需要进位所有8进制就是<code>\10</code>。<br>下面是Ascii码表</p>
+<p>发现<code>\8</code>打印很奇怪，<code>\10</code>则打印16进制的<code>\x08</code>，然后才想到这个是8进制，因为8表示8的话则需要进位所有8进制就是<code>\10</code>。</p>
+</blockquote>
+<h2 id="ASCII码表"><a href="#ASCII码表" class="headerlink" title="ASCII码表"></a>ASCII码表</h2><blockquote>
+<p><a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin&amp;fromid=19660475&amp;fromtitle=ascii%E7%A0%81%E8%A1%A8" title="百度百科Ascii码" target="_blank" rel="external">来源百度百科</a></p>
 </blockquote>
 <table>
 <thead>
