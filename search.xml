@@ -1498,7 +1498,7 @@
     </entry>
     
     <entry>
-      <title><![CDATA[使用 git rm --cached filename 删除提交的文件]]></title>
+      <title><![CDATA[Git删除提交的文件]]></title>
       <url>/2017/11/05/git/git_rm_use_cached/</url>
       <content type="html"><![CDATA[<h1 id="目的为了测试Markdown书写"><a href="#目的为了测试Markdown书写" class="headerlink" title="目的为了测试Markdown书写"></a>目的为了测试Markdown书写</h1><blockquote>
 <p>本人在学习 git 的时候，前期将本地的日志文件提交到仓库，然后也就查找了相关的操作方法，最终使用此命令解决的，然后新增<code>.gitignore</code>文件，提交，再次使用<code>git status</code>这些文件就不会再次出现了，其他情况也可以使用这个方法：将数据库账号密码配置文件从远端仓库删除。</p>
