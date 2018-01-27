@@ -6,9 +6,21 @@
       <title><![CDATA[Python进制问题]]></title>
       <url>/2018/01/27/python/common/hex&amp;octal_problem/</url>
       <content type="html"><![CDATA[<h1 id="16进制和8进制的问题"><a href="#16进制和8进制的问题" class="headerlink" title="16进制和8进制的问题"></a>16进制和8进制的问题</h1><blockquote>
-<p>今天在网上看到有人在问<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;\x20&apos;</div><div class="line">&apos; &apos;</div><div class="line">&gt;&gt;&gt; &apos;\20&apos;</div><div class="line">&apos;\x10&apos;</div></pre></td></tr></table></figure></p>
-<p>如上，因为这个存在特殊性：<code>\x20</code>对应是10进制是<code>32</code>，而<code>32</code>Ascii码对应的控制字符空格<code>Space</code>，这个一眼就看出来了是16进制，而且也知道是16进制。<br>然而<code>\20</code>就不好解释了，平时接触8进制也较少，刚开始以为是自动转换16进制，但是打印的结果显然推翻了结论，后续还想到<code>\</code>是转义字符，那么<code>\2</code>等有特殊意义。<br>于是开始从<code>\1</code>打印到<code>\10</code>，如下所示：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; &apos;\7&apos;</div><div class="line">&apos;\x07&apos;</div><div class="line">&gt;&gt;&gt; &apos;\8&apos;</div><div class="line">&apos;\\8&apos;</div><div class="line">&gt;&gt;&gt; &apos;\9&apos;</div><div class="line">&apos;\\9&apos;</div><div class="line">&gt;&gt;&gt; &apos;\10&apos;</div><div class="line">&apos;\x08&apos;</div></pre></td></tr></table></figure></p>
-<p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8就是<code>\10</code>。</p>
+<p>今天在网上看到有人在问<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题</p>
+<pre><code>&gt;&gt; &#39;\x20&#39;
+&#39; &#39;
+&gt;&gt; &#39;\20&#39;
+&#39;\x10&#39;
+</code></pre><p>如上，因为这个存在特殊性：<code>\x20</code>对应是10进制是<code>32</code>，而<code>32</code>Ascii码对应的控制字符空格<code>Space</code>，这个一眼就看出来了是16进制，而且也知道是16进制。<br>然而<code>\20</code>就不好解释了，平时接触8进制也较少，刚开始以为是自动转换16进制，但是打印的结果显然推翻了结论，后续还想到<code>\</code>是转义字符，那么<code>\2</code>等有特殊意义。<br>于是开始从<code>\1</code>打印到<code>\10</code>，如下所示：</p>
+<pre><code>&gt;&gt; &#39;\7&#39;
+&#39;\x07&#39;
+&gt;&gt; &#39;\8&#39;
+&#39;\\8&#39;
+&gt;&gt; &#39;\9&#39;
+&#39;\\9&#39;
+&gt;&gt; &#39;\10&#39;
+&#39;\x08&#39;
+</code></pre><p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8就是<code>\10</code>。</p>
 </blockquote>
 <h2 id="ASCII码表"><a href="#ASCII码表" class="headerlink" title="ASCII码表"></a>ASCII码表</h2><blockquote>
 <p><a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin&amp;fromid=19660475&amp;fromtitle=ascii%E7%A0%81%E8%A1%A8" title="百度百科Ascii码" target="_blank" rel="external">来源百度百科</a></p>
@@ -1076,10 +1088,12 @@
 </blockquote>
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><blockquote>
 <p>bs4是一个格式化读取xml，html文档的库<br>可以使xml、html按照标签的形式操作，具体是将HTML文档转换成一个复杂的树形结构。<br>官方推荐lxml来解析HTML<br>所有节点对象可以归纳为4种: Tag , NavigableString , BeautifulSoup , Comment .</p>
-<p>简单使用操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">html_doc = &apos;&apos;</div><div class="line">soup = BeautifulSoup(html_doc, &apos;html.parser&apos;)</div><div class="line">print(soup.prettify())  #美化输出，格式化缩进。</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="一般属性"><a href="#一般属性" class="headerlink" title="一般属性"></a>一般属性</h2><blockquote>
-<ul>
+<p>简单使用操作</p>
+<pre><code>from bs4 import BeautifulSoup
+html_doc = &#39;&#39;
+soup = BeautifulSoup(html_doc, &#39;html.parser&#39;)
+print(soup.prettify())  #美化输出，格式化缩进。
+</code></pre><h2 id="一般属性"><a href="#一般属性" class="headerlink" title="一般属性"></a>一般属性</h2><ul>
 <li><code>soup.title</code>：获取页面的标题，包含标签</li>
 <li><code>soup.title.name</code>：获取页面标题标签的内容</li>
 <li><code>soup.title.string</code>：获取页面标题的内容</li>
@@ -1094,8 +1108,12 @@
 <li><code>soup.find_all(&#39;a&#39;)</code>：找到所以的<code>a</code>标签</li>
 </ul>
 </blockquote>
-<h3 id="查找所有的a标签"><a href="#查找所有的a标签" class="headerlink" title="查找所有的a标签"></a>查找所有的a标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">for link in soup.find_all(&apos;a&apos;):</div><div class="line">    print(link.get(&apos;href&apos;))</div><div class="line">    # http://example.com/elsie</div><div class="line">    # http://example.com/lacie</div><div class="line">    # http://example.com/tillie</div></pre></td></tr></table></figure>
-<blockquote>
+<h3 id="查找所有的a标签"><a href="#查找所有的a标签" class="headerlink" title="查找所有的a标签"></a>查找所有的a标签</h3><pre><code>for link in soup.find_all(&#39;a&#39;):
+    print(link.get(&#39;href&#39;))
+    # http://example.com/elsie
+    # http://example.com/lacie
+    # http://example.com/tillie
+</code></pre><blockquote>
 <ul>
 <li><code>soup.get_text()</code>：拿到文档中所有的文字内容，实际测试新浪的首页存在问题，使用html5lib也一致。</li>
 </ul>
@@ -1139,78 +1157,102 @@
 <li>正则表达式<br>支持正则表达式，比如：<code>soup.find_all(re.compile(&quot;^b&quot;))</code></li>
 <li>列表参数<br>传入列表参数：<code>[&#39;a&#39;, &#39;b&#39;]</code> 找出<code>a</code> <code>b</code>的标签</li>
 <li>True<br>传入<code>True</code>值，那么会找到所有节点，但是没有字符串。</li>
-<li>方法<br>如果没有合适的过滤器，那么可以传入方法，方法接收一个参数<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def has_class_but_no_id(tag):</div><div class="line">    return tag.has_attr(&apos;class&apos;) and not tag.has_attr(&apos;id&apos;)</div><div class="line"></div><div class="line">def not_lacie(href):</div><div class="line">        return href and not re.compile(&quot;lacie&quot;).search(href)</div><div class="line">soup.find_all(href=not_lacie)</div><div class="line"></div><div class="line">from bs4 import NavigableString</div><div class="line">def surrounded_by_strings(tag):</div><div class="line">    return (isinstance(tag.next_element, NavigableString)</div><div class="line">            and isinstance(tag.previous_element, NavigableString))</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>具体参数 find_all( name , attrs , recursive , string , **kwargs )</p>
-<ul>
-<li>name 用来查找所以tag</li>
-<li>attrs 传入字典</li>
-<li>recursive 传入False只便利直接的子节点</li>
-<li>string 查找内容，页面上的文本内容，可以传入文字，列表，正则表达式，True</li>
-<li>**kwargs 传入关键字参数 比如：id=’xxx’  同时可以过滤多个这样的属性</li>
-<li>limit 限制查找的数量<br>有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">data_soup = BeautifulSoup(&apos;&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;&apos;)</div><div class="line">data_soup.find_all(data-foo=&quot;value&quot;)</div><div class="line">SyntaxError: keyword can&apos;t be an expression</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>但是可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">data_soup.find_all(attrs=&#123;&quot;data-foo&quot;: &quot;value&quot;&#125;)</div><div class="line">[&lt;div data-foo=&quot;value&quot;&gt;foo!&lt;/div&gt;]</div></pre></td></tr></table></figure></p>
-<p>但标识CSS类名的关键字 class 在Python中是保留字,使用 class 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 class_ 参数搜索有指定CSS类名的tag:</p>
-</blockquote>
-<h3 id="子节点-1"><a href="#子节点-1" class="headerlink" title="子节点"></a>子节点</h3><blockquote>
-<p>一个节点可能包含一个或者多个子节点</p>
-<ul>
-<li>contents and children：返回子节点的列表，后者返回迭代器。</li>
-<li>descendants：后裔，会将字符串也打印出来。</li>
-<li>srting：得到节点下的NavigableString对象</li>
-<li>strings and stripped_strings：得到节点下的所以NString对象，后者会去除空格和空行。</li>
+<li>方法<br>如果没有合适的过滤器，那么可以传入方法，方法接收一个参数<br>```<br>def has_class_but_no_id(tag):<br>  return tag.has_attr(‘class’) and not tag.has_attr(‘id’)</li>
 </ul>
 </blockquote>
-<h3 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h3><blockquote>
-<p>每个节点或者字符串都有父节点</p>
-<ul>
-<li>parent：得到直接父节点</li>
-<li>parents：得到所有的父节点</li>
-</ul>
-</blockquote>
-<h3 id="兄弟节点"><a href="#兄弟节点" class="headerlink" title="兄弟节点"></a>兄弟节点</h3><blockquote>
-<ul>
-<li>next_sipling and previous_sibling：类似遍历兄弟节点</li>
-<li>next_siplings and previous_siblings：当前节点之前或者之后的所有兄弟节点迭代输出</li>
-</ul>
-</blockquote>
-<h3 id="回退和前进"><a href="#回退和前进" class="headerlink" title="回退和前进"></a>回退和前进</h3><blockquote>
-<ul>
-<li>next_element and previous_element：返回当前节点上一个或者下一个被解析对象</li>
-<li>next_elements and previous_elements：对应的就是前后所有被解析的对象，就像HTML对象正在被解析一样</li>
-</ul>
-</blockquote>
-<h3 id="像调用-find-all-一样调用tag"><a href="#像调用-find-all-一样调用tag" class="headerlink" title="像调用 find_all() 一样调用tag"></a>像调用 find_all() 一样调用tag</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">soup.find_all(&quot;a&quot;)</div><div class="line">soup(&quot;a&quot;)</div></pre></td></tr></table></figure>
+<p>def not_lacie(href):<br>        return href and not re.compile(“lacie”).search(href)<br>soup.find_all(href=not_lacie)</p>
+<p>from bs4 import NavigableString<br>def surrounded_by_strings(tag):<br>    return (isinstance(tag.next_element, NavigableString)<br>            and isinstance(tag.previous_element, NavigableString))</p>
+<pre><code>
+&gt; 具体参数 find_all( name , attrs , recursive , string , **kwargs )
+&gt; * name 用来查找所以tag
+&gt; * attrs 传入字典
+&gt; * recursive 传入False只便利直接的子节点
+&gt; * string 查找内容，页面上的文本内容，可以传入文字，列表，正则表达式，True
+&gt; * **kwargs 传入关键字参数 比如：id=&#39;xxx&#39;  同时可以过滤多个这样的属性
+&gt; * limit 限制查找的数量
+&gt; 有些tag属性在搜索不能使用,比如HTML5中的 data-* 属性:
+</code></pre><p>data_soup = BeautifulSoup(‘<div data-foo="value">foo!</div>‘)<br>data_soup.find_all(data-foo=”value”)<br>SyntaxError: keyword can’t be an expression</p>
+<pre><code>&gt; 但是可以通过 find_all() 方法的 attrs 参数定义一个字典参数来搜索包含特殊属性的tag:
+</code></pre><p>data_soup.find_all(attrs={“data-foo”: “value”})<br>[<div data-foo="value">foo!</div>]</p>
+<pre><code>&gt; 但标识CSS类名的关键字 class 在Python中是保留字,使用 class 做参数会导致语法错误.从Beautiful Soup的4.1.1版本开始,可以通过 class_ 参数搜索有指定CSS类名的tag:
+
+
+### 子节点
+&gt; 一个节点可能包含一个或者多个子节点
+&gt; * contents and children：返回子节点的列表，后者返回迭代器。
+&gt; * descendants：后裔，会将字符串也打印出来。
+&gt; * srting：得到节点下的NavigableString对象
+&gt; * strings and stripped_strings：得到节点下的所以NString对象，后者会去除空格和空行。
+
+### 父节点
+&gt; 每个节点或者字符串都有父节点
+&gt; * parent：得到直接父节点
+&gt; * parents：得到所有的父节点
+
+### 兄弟节点
+&gt; * next_sipling and previous_sibling：类似遍历兄弟节点
+&gt; * next_siplings and previous_siblings：当前节点之前或者之后的所有兄弟节点迭代输出
+
+### 回退和前进
+&gt; * next_element and previous_element：返回当前节点上一个或者下一个被解析对象
+&gt; * next_elements and previous_elements：对应的就是前后所有被解析的对象，就像HTML对象正在被解析一样
+
+### 像调用 find_all() 一样调用tag
+</code></pre><p>soup.find_all(“a”)<br>soup(“a”)</p>
+<pre><code>&gt; 这两行是等价的
+
+### find()
+&gt; find_all是得到所有的结果，有时候我们只需要一个结果，那么直接使用find就行。
+&gt; find_all 加上参数limit = 1，也可以实现，但是返回的结果是列表
+&gt; find没有找到结果的时候返回`None`
+&gt; find方法多次调用：
+</code></pre><p>html.find(‘head’).find(‘title’)</p>
+<pre><code>### find_parents() 和 find_parent()
+&gt; 搜索当前节点的父节点
+</code></pre><p>s = html.find(string=’Lacie’) # 找到字符串Lacie<br>s.find_parents(‘a’) # 字符串节点的父节点</p>
+<pre><code>&gt; 其实方法就是使用了parent和parents属性进行迭代搜索的
+
+### find_next_siblings() 和 find_next_sibling()
+&gt; 通过next_siblings属性对当前tag之后的兄弟节点进行迭代搜索
+</code></pre><blockquote>
 <blockquote>
-<p>这两行是等价的</p>
+<blockquote>
+<p>first_link = html.a<br>first_link<br><a class="sister" href="http://example.com/elsie" id="link1" target="_blank" rel="external">Elsie</a><br>first_link.find_next_siblings()<br>[<a class="sister" href="http://example.com/lacie" id="link2" target="_blank" rel="external">Lacie</a>, <a clas="" s="sister" href="http://example.com/tillie" id="link3" target="_blank" rel="external">Tillie</a>]<br>```</p>
 </blockquote>
-<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><blockquote>
-<p>find_all是得到所有的结果，有时候我们只需要一个结果，那么直接使用find就行。<br>find_all 加上参数limit = 1，也可以实现，但是返回的结果是列表<br>find没有找到结果的时候返回<code>None</code><br>find方法多次调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html.find(&apos;head&apos;).find(&apos;title&apos;)</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h3 id="find-parents-和-find-parent"><a href="#find-parents-和-find-parent" class="headerlink" title="find_parents() 和 find_parent()"></a>find_parents() 和 find_parent()</h3><blockquote>
-<p>搜索当前节点的父节点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">s = html.find(string=&apos;Lacie&apos;) # 找到字符串Lacie</div><div class="line">s.find_parents(&apos;a&apos;) # 字符串节点的父节点</div></pre></td></tr></table></figure></p>
-<p>其实方法就是使用了parent和parents属性进行迭代搜索的</p>
-</blockquote>
-<h3 id="find-next-siblings-和-find-next-sibling"><a href="#find-next-siblings-和-find-next-sibling" class="headerlink" title="find_next_siblings() 和 find_next_sibling()"></a>find_next_siblings() 和 find_next_sibling()</h3><blockquote>
-<p>通过next_siblings属性对当前tag之后的兄弟节点进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; first_link = html.a</div><div class="line">&gt;&gt;&gt; first_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; first_link.find_next_siblings()</div><div class="line">[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a clas</div><div class="line">s=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]</div></pre></td></tr></table></figure></p>
 </blockquote>
 <h3 id="find-previous-siblings-和-find-previous-sibling"><a href="#find-previous-siblings-和-find-previous-sibling" class="headerlink" title="find_previous_siblings() 和 find_previous_sibling()"></a>find_previous_siblings() 和 find_previous_sibling()</h3><blockquote>
 <p>和上面类似</p>
 </blockquote>
 <h3 id="find-all-next-和-find-next"><a href="#find-all-next-和-find-next" class="headerlink" title="find_all_next() 和 find_next()"></a>find_all_next() 和 find_next()</h3><blockquote>
-<p>通过next_elements属性对当前tag进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f_link = html.a</div><div class="line">&gt;&gt;&gt; f_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; f_link.find_all_next(&apos;a&apos;)</div><div class="line">[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a clas</div><div class="line">s=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]</div><div class="line">&gt;&gt;&gt; f_link.find_all_next(string=True)</div><div class="line">[&apos;Elsie&apos;, &apos;,\n&apos;, &apos;Lacie&apos;, &apos; and\n&apos;, &apos;Tillie&apos;, &apos;;\nand they lived at the bottom o</div><div class="line">f a well.&apos;, &apos;\n&apos;, &apos;...&apos;, &apos;\n&apos;]</div></pre></td></tr></table></figure></p>
-</blockquote>
+<p>通过next_elements属性对当前tag进行迭代搜索</p>
+<pre><code>&gt;&gt; f_link = html.a
+&gt;&gt; f_link
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;
+&gt;&gt; f_link.find_all_next(&#39;a&#39;)
+[&lt;a class=&quot;sister&quot; href=&quot;http://example.com/lacie&quot; id=&quot;link2&quot;&gt;Lacie&lt;/a&gt;, &lt;a clas
+s=&quot;sister&quot; href=&quot;http://example.com/tillie&quot; id=&quot;link3&quot;&gt;Tillie&lt;/a&gt;]
+&gt;&gt; f_link.find_all_next(string=True)
+[&#39;Elsie&#39;, &#39;,\n&#39;, &#39;Lacie&#39;, &#39; and\n&#39;, &#39;Tillie&#39;, &#39;;\nand they lived at the bottom o
+f a well.&#39;, &#39;\n&#39;, &#39;...&#39;, &#39;\n&#39;]
+</code></pre></blockquote>
 <h3 id="find-all-previous-和-find-previous"><a href="#find-all-previous-和-find-previous" class="headerlink" title="find_all_previous() 和 find_previous()"></a>find_all_previous() 和 find_previous()</h3><blockquote>
-<p>通过previous_element对当前tag进行迭代搜索<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; f_link = html.a</div><div class="line">&gt;&gt;&gt; f_link</div><div class="line">&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;</div><div class="line">&gt;&gt;&gt; f_link.find_all_previous(&apos;title&apos;)</div><div class="line">[&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</div></pre></td></tr></table></figure></p>
-</blockquote>
+<p>通过previous_element对当前tag进行迭代搜索</p>
+<pre><code>&gt;&gt; f_link = html.a
+&gt;&gt; f_link
+&lt;a class=&quot;sister&quot; href=&quot;http://example.com/elsie&quot; id=&quot;link1&quot;&gt;Elsie&lt;/a&gt;
+&gt;&gt; f_link.find_all_previous(&#39;title&#39;)
+[&lt;title&gt;The Dormouse&#39;s story&lt;/title&gt;]
+</code></pre></blockquote>
 <h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><blockquote>
 <p>bs4支持大部分的CSS选择器：<a href="https://www.w3.org/TR/CSS2/selector.html" title="CSS Selector" target="_blank" rel="external">CSS Selector</a> <a href="http://www.w3school.com.cn/cssref/css_selectors.asp" title="CSS 选择器" target="_blank" rel="external">w3school</a></p>
 </blockquote>
 <blockquote>
-<p>在 <code>Tag</code> 或 <code>BeautifulSoup</code> 对象的 <code>.select()</code> 方法中传入字符串参数, 即可使用CSS选择器的语法找到tag:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">soup.select(&quot;title&quot;)</div><div class="line"># [&lt;title&gt;The Dormouse&apos;s story&lt;/title&gt;]</div><div class="line"></div><div class="line">soup.select(&quot;p nth-of-type(3)&quot;)</div><div class="line"># [&lt;p class=&quot;story&quot;&gt;...&lt;/p&gt;]</div></pre></td></tr></table></figure></p>
+<p>在 <code>Tag</code> 或 <code>BeautifulSoup</code> 对象的 <code>.select()</code> 方法中传入字符串参数, 即可使用CSS选择器的语法找到tag:<br>```<br>soup.select(“title”)</p>
+<h1 id="The-Dormouse’s-story"><a href="#The-Dormouse’s-story" class="headerlink" title="[The Dormouse’s story]"></a>[<title>The Dormouse’s story</title>]</h1></blockquote>
+<p>soup.select(“p nth-of-type(3)”)</p>
+<h1 id="…"><a href="#…" class="headerlink" title="[…]"></a>[<p class="story">…</p>]</h1><p>```</p>
+<blockquote>
 <p>不是很懂这个选择器</p>
 </blockquote>
 ]]></content>
@@ -1461,8 +1503,25 @@
       <content type="html"><![CDATA[<h1 id="What-is-Numpy"><a href="#What-is-Numpy" class="headerlink" title="What is Numpy"></a>What is Numpy</h1><blockquote>
 <p><code>Numpy</code>是Python科学计算的基本包，提供对于多维数组（矩阵）等各种计算，比如c = a * b，a、b均为矩阵，可以对其进行直接计算，不用使用循环遍历。<br>本机测试计算速度为for循环遍历计算的500+倍。例子如下：目前找不到源网页，直接粘上例子。</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">import numpy as np </div><div class="line">import time</div><div class="line">#from timeit import timeit</div><div class="line"></div><div class="line">a = np.random.rand(1000000)</div><div class="line">b = np.random.rand(1000000)</div><div class="line"></div><div class="line">time_s = time.time()</div><div class="line">c = np.dot(a, b)</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div><div class="line"></div><div class="line">c = 0</div><div class="line">time_s = time.time()</div><div class="line">for i in range(len(a)):</div><div class="line">	c += a[i] * b[i]</div><div class="line">time_e = time.time()</div><div class="line">print(c, 1000*(time_e - time_s))</div></pre></td></tr></table></figure>
-<blockquote>
+<pre><code>import numpy as np 
+import time
+#from timeit import timeit
+
+a = np.random.rand(1000000)
+b = np.random.rand(1000000)
+
+time_s = time.time()
+c = np.dot(a, b)
+time_e = time.time()
+print(c, 1000*(time_e - time_s))
+
+c = 0
+time_s = time.time()
+for i in range(len(a)):
+    c += a[i] * b[i]
+time_e = time.time()
+print(c, 1000*(time_e - time_s))
+</code></pre><blockquote>
 <p>下图所示<br><img src="/img/python/vectorization.png" alt="vectorization"></p>
 </blockquote>
 <h2 id="矢量化-Vectorization"><a href="#矢量化-Vectorization" class="headerlink" title="矢量化(Vectorization)"></a>矢量化(Vectorization)</h2><blockquote>
