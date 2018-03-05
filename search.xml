@@ -1251,9 +1251,201 @@ f a well.&#39;, &#39;\n&#39;, &#39;...&#39;, &#39;\n&#39;]
 <p>在 <code>Tag</code> 或 <code>BeautifulSoup</code> 对象的 <code>.select()</code> 方法中传入字符串参数, 即可使用CSS选择器的语法找到tag:<br>```<br>soup.select(“title”)</p>
 <h1 id="The-Dormouse’s-story"><a href="#The-Dormouse’s-story" class="headerlink" title="[The Dormouse’s story]"></a>[<title>The Dormouse’s story</title>]</h1></blockquote>
 <p>soup.select(“p nth-of-type(3)”)</p>
-<h1 id="…"><a href="#…" class="headerlink" title="[…]"></a>[<p class="story">…</p>]</h1><p>```</p>
+<h1 id="…"><a href="#…" class="headerlink" title="[…]"></a>[<p class="story">…</p>]</h1><pre><code>&gt; 不是很懂这个选择器，大概看起来可以根据CSS选择器文档来书写。
+
+### 修改文档树
+#### 修改tag的名称和属性
+&gt; `tag.name = &#39;blockquote&#39;`
+&gt; `tag[&#39;class&#39;] = &#39;modify value&#39;`
+&gt; `tag[&#39;id&#39;] = &#39;newid&#39;`
+#### 修改 `.string`
+&gt; `tag.string = &#39;New link text&#39;`
+#### `append()`
+&gt; 在.string上面追加内容
+#### `NavigableString() 和 .new_tag()`
+&gt; `NavigableString()` 是构造一个字符串，然后将其放入需要修改的地方。
+&gt; `new_string = NavigableString(&#39;Hello&#39;)`
+&gt; `html.b.append(new_string)`
+&gt; `from bs4 import Comment`
+&gt; `new_comment = html.new_string(&#39;Nice to see you&#39;, Comment)`
+&gt; `html.b.append(new_comment)`
+&gt; 创建一个Tag的最好的方法是调用工厂方法，new_tag()
+&gt; `new_tag = html.new_tag(&#39;a&#39;, href=&#39;test&#39;)`
+&gt; `html.b.append(new_tag)` # 在b标签的下面追加一个tag `a`
+#### `insert()`
+&gt; 选择插入的位置，这个和append类似，不过可以选择位置插入。
+#### insert_before, insert_after
+&gt; 看名字就知道，这是在当前tag或者string后边插入对象。
+&gt; 定位到tag或者string，然后使用方法进行插入。
+#### &#39;clear()&#39;
+&gt; 移除tag下的内容
+#### &#39;extract()&#39;
+&gt; 移除当前tag，将tag移除。
+&gt; 该方法移除tag的时候，会返回移除的tag信息
+&#39;&#39;&#39;
+&gt;&gt;&gt; html = &#39;&lt;h1&gt;&lt;a href=&quot;www.text.com&quot;&gt;wwwww&lt;/a&gt;&lt;/h1&gt;&#39;
+&gt;&gt;&gt; h = bs(html, &#39;lxml&#39;)
+&gt;&gt;&gt; h
+&lt;html&gt;&lt;body&gt;&lt;h1&gt;&lt;a href=&quot;www.text.com&quot;&gt;wwwww&lt;/a&gt;&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+&gt;&gt;&gt; h.body.a
+&lt;a href=&quot;www.text.com&quot;&gt;wwwww&lt;/a&gt;
+&gt;&gt;&gt; tag = h.body.a.extract()
+&gt;&gt;&gt; tag
+&lt;a href=&quot;www.text.com&quot;&gt;wwwww&lt;/a&gt;
+&gt;&gt;&gt; h
+&lt;html&gt;&lt;body&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;
+&gt;&gt;&gt;
+&#39;&#39;&#39;
+#### &#39;decompose()&#39;
+&gt; 这个更为激进，移除tag之后，不返回。
+#### &#39;replace_with()&#39;
+&gt; 移除内容并替换新的tag或者string
+&gt; return：方法返回被替换的内容
+#### &#39;wrap()&#39;
+&gt; 对元素进行包装，并且返回包装后的内容。
+&#39;&#39;&#39;
+&gt;&gt;&gt; tag = &lt;a&gt;xxx&lt;/a&gt;
+&gt;&gt;&gt; wrap_tag = BeautifulSoup.new_tag(&#39;p&#39;)
+&gt;&gt;&gt; tag.wrap(wrap_tag)
+&gt;&gt;&gt; tag
+&lt;p&gt;&lt;a&gt;xxx&lt;/a&gt;&lt;/p&gt;
+#### &#39;unwrap()&#39;
+&gt; 和wrap的方法相反
+&#39;&#39;&#39;
+markup = &#39;&lt;a href=&quot;http://example.com/&quot;&gt;I linked to &lt;i&gt;example.com&lt;/i&gt;&lt;/a&gt;&#39;
+soup = BeautifulSoup(markup)
+a_tag = soup.a
+
+a_tag.i.unwrap()
+a_tag
+# &lt;a href=&quot;http://example.com/&quot;&gt;I linked to example.com&lt;/a&gt;
+&#39;&#39;&#39;
+#### 格式化输出
+&gt; prettify() : 格式化为unicode之后，每个xml、html独占一行。
+&#39;&#39;&#39;
+&gt;&gt;&gt; html.prettify()
+&#39;&lt;html&gt;\n &lt;body&gt;\n  &lt;a href=&quot;http://example.com/&quot;&gt;\n   I linked to\n   &lt;i&gt;\n
+example.com\n   &lt;/i&gt;\n  &lt;/a&gt;\n &lt;/body&gt;\n&lt;/html&gt;&#39;
+&gt;&gt;&gt; print(html.prettify())
+&lt;html&gt;
+ &lt;body&gt;
+  &lt;a href=&quot;http://example.com/&quot;&gt;
+   I linked to
+   &lt;i&gt;
+    example.com
+   &lt;/i&gt;
+  &lt;/a&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+&#39;&#39;&#39;
+#### 压缩输出
+&gt; unicode(bs)、str(bs)和encode
+&gt; 这应该属于其它操作了
+#### 输出格式
+&gt; bs会将html里边的特殊字符转换成unicode的格式
+&#39;&#39;&#39;
+&gt;&gt;&gt; soup = bs(&quot;&amp;ldquo;Dammit!&amp;rdquo; he said.&quot;)
+unicode(soup)
+# u&#39;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;\u201cDammit!\u201d he said.&lt;/body&gt;&lt;/html&gt;&#39;
+&#39;&#39;&#39;
+&gt; python3上面没有unicode，直接使用str替换。
+&gt; 并且3上面bs4是直接将&amp;再次转义了，其它没有变化。
+#### &#39;get_text()&#39;
+&gt; 如果想要获取tag里边的所以文本内容，可以使用这个方法。
+&gt; &#39;get_text(&#39;|&#39;) # 第一个参数指定分隔符号，不太明白这个分隔符具体操作，单词？？？&#39;
+&gt; &#39;get_text(&#39;|&#39;, trip=True) # 这个会处理文本两端的空格&#39;
+&gt; 还可以使用stripped_string生成器，获取文本列表分别处理。
+
+#### 指定解析器
+&gt; &#39;BeautifulSoup()&#39; 第一个参数是文本或者是文件，第二个参数是解析器，Python3应该不自动选择解析器。
+&gt; 目前支持解析：html、xml和html5
+&gt; 解析器有：lxml、html5lib和html.parser
+&gt; * 解析器之间的区别
+&gt; 使用了不同的解析器会产生不同的结果
+&gt; 具体还是去官网查看API，这里就这样了。
+&gt; 存在一些加标签和保留特定的标签的差异：
+&gt; 比如lxml会将单结束标志&#39;&lt;/p&gt;&#39;去掉，而html5lib会将其补齐为&#39;&lt;p&gt;&lt;/p&gt;&#39;
+&gt; 一般不全的都会补齐基本标签，比如：&#39;&lt;html&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;&#39;
+&gt; 官方给的建议是在代码上面标注使用了什么解析器。
+
+#### 编码
+&gt; 任何文档都有其编码方式，使用bs4之后都将其解析为unicode
+&gt; bs使用了自动编码检测来将文档的编码转换为unicode
+&gt; &#39;original_encoding&#39;属性记录了自动识别的编码
+&gt; bs采用了逐字节的方式来识别编码的，存在效率问题，并且还会猜错。
+&gt; 所以可以使用from_encoding参数来指定文档的编码：
+&gt; BeautifulSoup(xxx, &#39;lxml&#39;, from_encoding=&#39;utf-8&#39;)
+&gt; 当编码比较接近或者是其子集的时候，可能会猜测错误，并且我们也只是知道大致编码的时候，这个时候bs提供exclude_encoding参数来排除错误的编码。
+&gt; 相当于猜测这个文档编码的一个集合，然后取其最可能的编码方式，但是如果猜测错误，那么说明猜测的这个编码是最可能的，但是是错误的，所以提供这个方法来排除，然后相当于让其猜测第二个可能的编码方式。
+&gt; 例如：&#39;BeautifulSoup(xxx, &#39;lxml&#39;, exclude_encoding=[&#39;utf-8&#39;])&#39;
+&gt; 原文：少数情况下(通常是UTF-8编码的文档中包含了其它编码格式的文件),想获得正确的Unicode编码就不得不将文档中少数特殊编码字符替换成特殊Unicode编码,“REPLACEMENT CHARACTER” (U+FFFD, �) [9] . 如果Beautifu Soup猜测文档编码时作了特殊字符的替换,那么Beautiful Soup会把 UnicodeDammit 或 BeautifulSoup 对象的 .contains_replacement_characters 属性标记为 True .这样就可以知道当前文档进行Unicode编码后丢失了一部分特殊内容字符.如果文档中包含�而 .contains_replacement_characters 属性是 False ,则表示�就是文档中原来的字符,不是转码失败.
+
+#### 输出编码
+&gt; bs将输入的文档都转换为utf-8输出，并且会将源数据的meta里边的编码也改成utf-8
+&gt; 在&#39;prettify(&#39;utf-8&#39;)&#39;可以指定打印其编码
+&gt; 并且调研bs对象或者节点的方式来使用encode()方法
+&gt; &#39;tag.encode(&#39;utf-8&#39;)&#39;
+&gt; 如果文档中包含当前编码不支持的字符，那么会进行转码。
+&#39;&#39;&#39;
+&gt;&gt;&gt; markup = u&quot;&lt;b&gt;\N{SNOWMAN}&lt;/b&gt;&quot;
+&gt;&gt;&gt; snowman_soup = BeautifulSoup(markup)
+&gt;&gt;&gt; tag = snowman_soup.b
+&gt;&gt;&gt; print(tag.encode(&quot;utf-8&quot;))
+# &lt;b&gt;☃&lt;/b&gt;
+
+&gt;&gt;&gt; print tag.encode(&quot;latin-1&quot;)
+# &lt;b&gt;&amp;#9731;&lt;/b&gt;
+
+&gt;&gt;&gt; print tag.encode(&quot;ascii&quot;)
+# &lt;b&gt;&amp;#9731;&lt;/b&gt;
+&#39;&#39;&#39;
+
+#### &#39;UnicodeDammit&#39;
+&gt; 这个是bs的内置库，可以用来猜测文档的编码。
+&gt; UnicodeDammit(&#39;xxx&#39;).unicode_markup.original_encoding
+&gt; 就可以查看猜测的编码了。
+&gt; UnicodeDammit.detwingle()：可以将编码进行统一，比如一些网站包含了另外的网站内容，但是编码却不一样，一个是utf-8编码，一个是另外的编码
+&gt; 这样直接使用是存在问题的。所以在处理之前最好使用这个方法进行操作一次。
+
+#### 判断对象是否相同
+&gt; 使用等于不严格的方式来判断是否相同，如下图不同位置b对象是相同的
+&#39;&#39;&#39;
+&gt;&gt;&gt; markup = &quot;&lt;p&gt;I want &lt;b&gt;pizza&lt;/b&gt; and more &lt;b&gt;pizza&lt;/b&gt;!&lt;/p&gt;&quot;
+&gt;&gt;&gt; soup = BeautifulSoup(markup, &#39;html.parser&#39;)
+&gt;&gt;&gt; first_b, second_b = soup.find_all(&#39;b&#39;)
+&gt;&gt;&gt; print(first_b == second_b)
+# True
+
+&gt;&gt;&gt; print(first_b.previous_element == second_b.previous_element)
+# False
+&#39;&#39;&#39;
+&gt; 使用is来严格判断是否相同
+&#39;&#39;&#39;
+&gt;&gt;&gt; print(first_b is second_b)
+False
+&#39;&#39;&#39;
+#### 复制Beautiful Soup对象
+&gt;&gt;&gt; `copy.copy()`可以复制任意的`Tag`或`NavigableString`
+</code></pre><p>import copy<br>p_copy = copy.copy(soup.p)</p>
+<pre><code>#### 解析部分文档
+&gt;&gt;&gt; 如果仅仅需要获取页面中的`a`标签的内容，但是如果全部都去解析，就太耗费性能和内存了。最快的方法就在一开始就把`a`标签以外的都忽略掉。
+&gt;&gt;&gt; SoupStrainer类可以定义文档的某段内容，只会解析SoupStrainer中定义的内容，创建一个SoupStrainer对象并作为parse_only参数给BeautifulSoup的构造方法就行。
+&gt;&gt;&gt; SoupSTrainer类接受与典型搜索方法相同的参数：name、attr、recursive、string、**kw，下面源教程的列子，最后的short_strings运行错误，可能是参数导致的，显示`NoneType`无len。
+</code></pre><p>from bs4 import SoupStrainer</p>
+<p>only_a_tags = SoupStrainer(“a”) #</p>
+<p>only_tags_with_id_link2 = SoupStrainer(id=”link2”)</p>
+<p>def is_short_string(string):<br>    return len(string) &lt; 10</p>
+<p>only_short_strings = SoupStrainer(string=is_short_string)</p>
+<p>BeautifulSoup(html_doc, “html.parser”, parse_only=only_a_tags)<br>```</p>
+<h4 id="其他说明（官方教程为代码诊断）"><a href="#其他说明（官方教程为代码诊断）" class="headerlink" title="其他说明（官方教程为代码诊断）"></a>其他说明（官方教程为代码诊断）</h4><blockquote>
 <blockquote>
-<p>不是很懂这个选择器</p>
+<blockquote>
+<p><code>from bs4.diagnose import diagnose</code><br>这个可以打印出解析器处理文档的过程。使用了一下，貌似是使用了不同的解析器对文档进行解析，然后分别给出结果。</p>
+<h4 id="解析错误"><a href="#解析错误" class="headerlink" title="解析错误"></a>解析错误</h4><p>解析崩溃或者异常基本都不是bs4的问题，因为他并不包含解析器，官方给于的解释是换解析器<br>最常见的解析错误是<code>HTMLParser.HTMLParseError: malformed start tag</code>和<code>HTMLParser.HTMLParseError: bad end tag</code>.这都是由Python内置的解析器引起的,解决方法是 安装<code>lxml</code>或<code>html5lib</code><br>find_all()或者find返回都是空，但是文档中也存在这个Tag，还是换解析器。</p>
+<h5 id="解析器错误"><a href="#解析器错误" class="headerlink" title="解析器错误"></a>解析器错误</h5><p>一般解析器解析之后都是转为小写，如果要保留大小写，那么使用<code>xml</code>解析器</p>
+<h4 id="效率问题"><a href="#效率问题" class="headerlink" title="效率问题"></a>效率问题</h4><p>使用<code>lxml</code>解析器会较快一点</p>
+<h2 id="安装cchardet之后，文档编码检测速度会更快。"><a href="#安装cchardet之后，文档编码检测速度会更快。" class="headerlink" title="安装cchardet之后，文档编码检测速度会更快。"></a>安装<code>cchardet</code>之后，文档编码检测速度会更快。</h2><h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1></blockquote>
+</blockquote>
 </blockquote>
 ]]></content>
       
