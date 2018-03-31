@@ -47,7 +47,7 @@
     
     <title>
         
-            分类: git | 
+            学习gRPC模块 | 
         
         LKJ Hexo Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",学习 python gRPC">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -85,6 +85,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -221,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LKJ Hexo Blog">
-    <meta name="msapplication-starturl" content="https://returnwow.github.io/categories/git/">
+    <meta name="msapplication-starturl" content="https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="LKJ Hexo Blog">
@@ -236,13 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://returnwow.github.io/categories/git/">
+    <meta property="og:url" content="https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: git | LKJ Hexo Blog">
+    <meta property="og:title" content="学习gRPC模块 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
-    
+    <meta property="og:article:tag" content="学习 python gRPC"> 
 
+    
+        <meta property="article:published_time" content="Sat Mar 31 2018 09:38:20 GMT+0800">
+        <meta property="article:modified_time" content="Sat Mar 31 2018 09:39:02 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://returnwow.github.io/categories/git/index.html" />
+        <link rel="canonical" href="https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html",
+    "headline": "学习gRPC模块",
+    "datePublished": "Sat Mar 31 2018 09:38:20 GMT+0800",
+    "dateModified": "Sat Mar 31 2018 09:39:02 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "LKJ",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LKJ Hexo Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",学习 python gRPC",
+    "description": "Blog",
+}
+</script>
 
 
     
@@ -294,98 +330,318 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#gRPC学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">gRPC学习笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1、前言"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1、前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2、概述"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2、概述</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1、gRPC是什么"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">2.1、gRPC是什么</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2、使用protocol-buffers"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2.2、使用protocol buffers</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3、Hello-gRPC！"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3、Hello gRPC！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1、定义服务"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">3.1、定义服务</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2、生成gRPC代码"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">3.2、生成gRPC代码</span></a></li></ol></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/05/git/git_rm_use_cached/">Git删除提交的文件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/05/git/git_rm_use_cached/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/git/">git</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                学习gRPC模块
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>LKJ</strong>
+        <span>3月 31, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/学习-python-gRPC/">学习 python gRPC</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=学习gRPC模块&url=https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html&pic=https://returnwow.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=学习gRPC模块&url=https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html&via=LKJ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://returnwow.github.io/2018/03/31/python/gRPC/learn_gRPC/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="gRPC学习笔记"><a href="#gRPC学习笔记" class="headerlink" title="gRPC学习笔记"></a>gRPC学习笔记</h1><hr>
+<blockquote>
+<p>学习来源 <a href="http://doc.oschina.net/grpc?t=56831" target="_blank" rel="external">开源中国</a></p>
+</blockquote>
+<h2 id="1、前言"><a href="#1、前言" class="headerlink" title="1、前言"></a>1、前言</h2><blockquote>
+<ul>
+<li><code>gRPC</code>是一个高性能、开源和通用的RPC框架</li>
+<li>面向移动和<code>HTTP/2</code>设计</li>
+<li>提供跨平台、跨语言（支持多语言）支持</li>
+<li><code>gRPC</code>基于<code>HTTP/2</code>标准设计，带来双向流、流控、头部压缩、单TCP连接上的多复用请求（连接复用吧）等等，使其在移动设备上表现更好，更省电和节省空间占用。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="2、概述"><a href="#2、概述" class="headerlink" title="2、概述"></a>2、概述</h2><blockquote>
+<ul>
+<li><code>gRPC</code>是语言中立、平台中立、开源的远程过程调用（<code>RPC</code>）系统（比如可以用<code>Java</code>创建服务器，而用<code>Python</code>创建客户端）。<h3 id="2-1、gRPC是什么"><a href="#2-1、gRPC是什么" class="headerlink" title="2.1、gRPC是什么"></a>2.1、gRPC是什么</h3></li>
+<li>与许多 <code>RPC</code> 系统类似，<code>gRPC</code> 也是基于以下理念：定义一个服务，指定其能够被远程调用的方法（包含参数和返回类型）。在服务端实现这个接口，并运行一个 <code>gRPC</code> 服务器来处理客户端调用。在客户端拥有一个存根能够像服务端一样的方法。</li>
+<li>使得我们可以更容易的创建分布式应用和服务<h3 id="2-2、使用protocol-buffers"><a href="#2-2、使用protocol-buffers" class="headerlink" title="2.2、使用protocol buffers"></a>2.2、使用protocol buffers</h3></li>
+<li>是一个Google开源的成熟的结构数据序列化机制（如同<code>JSON</code>、<code>XML</code>）。</li>
+<li><a href="http://blog.csdn.net/shensky711/article/details/69696392" target="_blank" rel="external">protocol buffers手册</a></li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="3、Hello-gRPC！"><a href="#3、Hello-gRPC！" class="headerlink" title="3、Hello gRPC！"></a>3、Hello gRPC！</h2><blockquote>
+<ul>
+<li>创建一个官方支持，并是自己熟悉的语言的<code>RPC</code>服务（Hello World），在官方的Github上都存在相应的例子。</li>
+<li>准备工作：本机有<code>Git</code>，然后clone需要的版本的源码。</li>
+</ul>
+</blockquote>
+<h3 id="3-1、定义服务"><a href="#3-1、定义服务" class="headerlink" title="3.1、定义服务"></a>3.1、定义服务</h3><blockquote>
+<ul>
+<li>创建一个例子的第一步是定义一个服务（感觉就是<code>protocol buffers</code>的配置文件）：一个RPC服务通过参数和返回类型来指定可以远程调用的方法。</li>
+<li><code>gRPC</code>通过<code>protocol buffers</code>来实现这个功能。</li>
+<li>下面将使用<code>protocol buffers</code>接口定义语言来定义服务，使用该协议来定义参数和返回类型。客户端和服务器均使用服务定义生成的接口代码。</li>
+</ul>
+</blockquote>
+<pre><code>syntax = &quot;proto3&quot;;
+
+option java_package = &quot;io.grpc.examples&quot;;
+
+package helloworld;
+
+// The greeter service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user&#39;s name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string message = 1;
+}
+</code></pre><h3 id="3-2、生成gRPC代码"><a href="#3-2、生成gRPC代码" class="headerlink" title="3.2、生成gRPC代码"></a>3.2、生成gRPC代码</h3><blockquote>
+<ul>
+<li>定义好服务之后，就可以使用<code>protocol buffers</code>编译器<code>protoc</code>来创建应用所需的特定客户端和服务器的代码。生成代码的同时包括客户端的存根和服务端要实现的抽象接口，均包含<code>Greeter</code>所定义的方法。</li>
+<li><p>可以使用如下命令生成客户端和服务器端：<br><code>./run_codegen.sh # shell只能在支持shell的平台</code></p>
+</li>
+<li><p>Python编译语法如下，需要安装<code>grpcio-tools</code>，使用<code>pip install grpcio-tools</code>安装，这里边包含编译的工具。</p>
+</li>
+</ul>
+</blockquote>
+<p><code>python -m grpc_tools.protoc -I../protos --python_out=. --grpc_python_out=. ../protos/helloworld.proto</code></p>
+<blockquote>
+<ul>
+<li>其中 <code>-I</code>：为自定的proto文件目录，是一个目录，那么如果我们在这个文件的目录，就选择上级目录，然后定位到protos目录</li>
+<li><code>--python_out</code> &amp; <code>--grpc_python_out</code>：明显是根据<code>proto</code>文件生成的<code>python</code>文件，包含两个文件，暂时不知道具体用处，只知道是有一个是将<code>proto</code>文件定义的<code>rpc</code>绑定到相应的东西上，另外一个相当于做了一个抽象类，里边有<code>proto</code>定义的两个调用的抽象方法，服务器需要实现的方法。</li>
+<li>最后的是指定需要编译的<code>proto</code>文件，和前面的<code>-I</code>为组合，试了一下去掉<code>-I</code>参数反之在proto文件上加上相对路径，结果无法编译。</li>
+<li>编译好之后，按照官方的服务器和客户端代码，在服务器上实现更新的方法，做相应处理，然后返回，在客户端调用即可。</li>
+<li>备注：服务器和客户端必须携带生成的两个代码，这样有点类似分布式实现的Queue了。</li>
+</ul>
+</blockquote>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxMi8xMDE2Nw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/31/python/10_minutes_to_pandas_note/10_minutes_to_pandas_note/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -723,6 +979,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -735,6 +995,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
