@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content=",学习 python Pandas">
+    <meta name="keywords" content=",学习 python Pandas 10minutes">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -244,11 +244,11 @@
     <meta property="og:title" content="学习10分钟入门Pandas模块 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
-    <meta property="og:article:tag" content="学习 python Pandas"> 
+    <meta property="og:article:tag" content="学习 python Pandas 10minutes"> 
 
     
         <meta property="article:published_time" content="Sat Mar 31 2018 09:33:32 GMT+0800">
-        <meta property="article:modified_time" content="Sat Mar 31 2018 09:37:21 GMT+0800">
+        <meta property="article:modified_time" content="Thu Apr 26 2018 21:21:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -271,7 +271,7 @@
     "mainEntityOfPage": "https://returnwow.github.io/2018/03/31/python/10_minutes_to_pandas_note/10_minutes_to_pandas_note/index.html",
     "headline": "学习10分钟入门Pandas模块",
     "datePublished": "Sat Mar 31 2018 09:33:32 GMT+0800",
-    "dateModified": "Sat Mar 31 2018 09:37:21 GMT+0800",
+    "dateModified": "Thu Apr 26 2018 21:21:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -289,7 +289,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",学习 python Pandas",
+    "keywords": ",学习 python Pandas 10minutes",
     "description": "Blog",
 }
 </script>
@@ -359,7 +359,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10分钟入门Pandas笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">10分钟入门Pandas笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要引用的包"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要引用的包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、创建对象"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">一、创建对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame："><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4、查看不同列的数据类型"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4、查看不同列的数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、查看数据"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">二、查看数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、查看frame中头部和尾部的行"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1、查看frame中头部和尾部的行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、查看索引、列和底层的numpy数据："><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2、查看索引、列和底层的numpy数据：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、使用describe-对数据进行快速统计汇总："><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3、使用describe()对数据进行快速统计汇总：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4、对数据进行转置操作"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">4、对数据进行转置操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6、按值进行排序："><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">6、按值进行排序：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、选择"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">三、选择</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取："><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">获取：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通过标签选择"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">通过标签选择</span></a></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10分钟入门Pandas笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text">10分钟入门Pandas笔记</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#主要引用的包"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">主要引用的包</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、创建对象"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">一、创建对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame："><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4、查看不同列的数据类型"><span class="post-toc-number">1.2.4.</span> <span class="post-toc-text">4、查看不同列的数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"><span class="post-toc-number">1.2.5.</span> <span class="post-toc-text">5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、查看数据"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">二、查看数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、查看frame中头部和尾部的行"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">1、查看frame中头部和尾部的行</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、查看索引、列和底层的numpy数据："><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">2、查看索引、列和底层的numpy数据：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、使用describe-对数据进行快速统计汇总："><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">3、使用describe()对数据进行快速统计汇总：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4、对数据进行转置操作"><span class="post-toc-number">1.3.4.</span> <span class="post-toc-text">4、对数据进行转置操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6、按值进行排序："><span class="post-toc-number">1.3.5.</span> <span class="post-toc-text">6、按值进行排序：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、选择"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">三、选择</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1、获取："><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">1、获取：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2、通过标签选择"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">2、通过标签选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3、通过位置选择"><span class="post-toc-number">1.4.3.</span> <span class="post-toc-text">3、通过位置选择</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4、布尔索引"><span class="post-toc-number">1.4.4.</span> <span class="post-toc-text">4、布尔索引</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#三、设置"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">三、设置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#四、缺失值处理"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">四、缺失值处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#五、相关操作"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">五、相关操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#统计（相关操作通常情况下不包括NaN值）"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">统计（相关操作通常情况下不包括NaN值）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Apply"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">Apply</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#字符串方法"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">字符串方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#六、合并"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">六、合并</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#七、分组"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">七、分组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#八、Reshaping"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">八、Reshaping</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#九、时间序列"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">九、时间序列</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十、Categorical"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">十、Categorical</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十一、画图"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">十一、画图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#十二、导入和保存数据"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">十二、导入和保存数据</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -434,7 +434,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/学习-python-Pandas/">学习 python Pandas</a>
+        <a class="post_tag-link" href="/tags/学习-python-Pandas-10minutes/">学习 python Pandas 10minutes</a>
     </ul>
     
 
@@ -518,9 +518,8 @@ import matplotlib.pyplot as plt # 可视化 画图
 <ul>
 <li>可以通过<a href="http://pandas.pydata.org/pandas-docs/stable/dsintro.html#dsintro" target="_blank" rel="external">Data Structure Introduction Setion</a>了解有关本节内容的详细信息。</li>
 </ul>
-</blockquote>
-<h3 id="1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："><a href="#1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：" class="headerlink" title="1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："></a>1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：</h3><pre><code>&gt;&gt;&gt; s = pd.Series([1,3,5,np.nan,6,8])
-&gt;&gt;&gt; s
+<h3 id="1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："><a href="#1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：" class="headerlink" title="1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引："></a>1、可以通过传递一个list对象来创建一个Series，Pandas会默认创建整型索引：</h3><pre><code>&gt;&gt; s = pd.Series([1,3,5,np.nan,6,8])
+&gt;&gt; s
 0    1.0
 1    3.0
 2    5.0
@@ -528,13 +527,13 @@ import matplotlib.pyplot as plt # 可视化 画图
 4    6.0
 5    8.0
 dtype: float64
-</code></pre><h3 id="2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame："><a href="#2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame：" class="headerlink" title="2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame："></a>2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame：</h3><pre><code>&gt;&gt;&gt; dates = pd.date_range(&#39;20180329&#39;, periods=6)
-&gt;&gt;&gt; dates
+</code></pre><h3 id="2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame："><a href="#2、通过传递一个numpy-array，时间索引以及列标签来创建一个DataFrame：" class="headerlink" title="2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame："></a>2、通过传递一个numpy array，时间索引以及列标签来创建一个DataFrame：</h3><pre><code>&gt;&gt; dates = pd.date_range(&#39;20180329&#39;, periods=6)
+&gt;&gt; dates
 DatetimeIndex([&#39;2018-03-29&#39;, &#39;2018-03-30&#39;, &#39;2018-03-31&#39;, &#39;2018-04-01&#39;,
                &#39;2018-04-02&#39;, &#39;2018-04-03&#39;],
               dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
-&gt;&gt;&gt; df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=list(&#39;ABCD&#39;))
-&gt;&gt;&gt; df
+&gt;&gt; df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=list(&#39;ABCD&#39;))
+&gt;&gt; df
                    A         B         C         D
 2018-03-29  0.916819  0.146020  0.072409 -0.596416
 2018-03-30  2.401470 -1.407265 -0.579490  1.653233
@@ -542,21 +541,20 @@ DatetimeIndex([&#39;2018-03-29&#39;, &#39;2018-03-30&#39;, &#39;2018-03-31&#39;,
 2018-04-01 -1.917880 -0.470291 -1.102185  0.233711
 2018-04-02  0.504557 -2.568238 -0.411014 -0.524040
 2018-04-03  0.797517 -1.459728  1.254905 -0.083599
-</code></pre><h3 id="3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："><a href="#3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：" class="headerlink" title="3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："></a>3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：</h3><pre><code>&gt;&gt;&gt; df = pd.DataFrame(
+</code></pre><h3 id="3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："><a href="#3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：" class="headerlink" title="3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame："></a>3、通过传递一个能够被转换成类似序列结果的字典对象来创建一个DataFrame：</h3><pre><code>&gt;&gt; df = pd.DataFrame(
 {&#39;A&#39;:1, 
  &#39;B&#39;:pd.Timestamp(&#39;20180329&#39;),
  &#39;C&#39;:pd.Series(1, index=list(range(4))),
  &#39;D&#39;:np.array([3]*4, dtype=&#39;int32&#39;),
  &#39;E&#39;:pd.Categorical([&#39;test&#39;, &#39;train&#39;, &#39;test&#39;, &#39;train&#39;]),
  &#39;F&#39;:&#39;foo&#39;})
-&gt;&gt;&gt; df
+&gt;&gt; df
    A          B  C  D      E    F
 0  1 2018-03-29  1  3   test  foo
 1  1 2018-03-29  1  3  train  foo
 2  1 2018-03-29  1  3   test  foo
 3  1 2018-03-29  1  3  train  foo
-</code></pre><h3 id="4、查看不同列的数据类型"><a href="#4、查看不同列的数据类型" class="headerlink" title="4、查看不同列的数据类型"></a>4、查看不同列的数据类型</h3><blockquote>
-<ul>
+</code></pre><h3 id="4、查看不同列的数据类型"><a href="#4、查看不同列的数据类型" class="headerlink" title="4、查看不同列的数据类型"></a>4、查看不同列的数据类型</h3><ul>
 <li><code>df.dtypes</code><pre><code>&gt;&gt; df.dtypes
 A             int64
 B    datetime64[ns]
@@ -567,9 +565,10 @@ F            object
 dtype: object
 </code></pre></li>
 </ul>
-</blockquote>
-<h3 id="5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"><a href="#5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。" class="headerlink" title="5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"></a>5、如果使用的是<code>IPython</code>，使用<code>Tab</code>自动补全功能会自动识别所有的数学以及自定义的列。</h3><h2 id="二、查看数据"><a href="#二、查看数据" class="headerlink" title="二、查看数据"></a>二、查看数据</h2><blockquote>
-<ul>
+<h3 id="5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"><a href="#5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。" class="headerlink" title="5、如果使用的是IPython，使用Tab自动补全功能会自动识别所有的数学以及自定义的列。"></a>5、如果使用的是<code>IPython</code>，使用<code>Tab</code>自动补全功能会自动识别所有的数学以及自定义的列。</h3></blockquote>
+<hr>
+<blockquote>
+<h2 id="二、查看数据"><a href="#二、查看数据" class="headerlink" title="二、查看数据"></a>二、查看数据</h2><ul>
 <li>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics" target="_blank" rel="external">Basics Section</a><h3 id="1、查看frame中头部和尾部的行"><a href="#1、查看frame中头部和尾部的行" class="headerlink" title="1、查看frame中头部和尾部的行"></a>1、查看frame中头部和尾部的行</h3><pre><code>&gt;&gt; df
  A          B  C  D      E    F
 0  1 2018-03-29  1  3   test  foo
@@ -633,7 +632,7 @@ max    1.0  1.0  3.0
 </code></pre><blockquote>
 <blockquote>
 <blockquote>
-<p>df.sort_index(axis=1, ascending=False)<br>                   D         C         B         A<br>2018-03-29  0.621323  0.232728 -0.245439  1.887637<br>2018-03-30 -0.687133  0.794514  0.462420 -2.270712<br>2018-03-31 -1.453160 -0.512256  0.554050 -1.068204<br>2018-04-01 -1.947354  1.232493  0.656760  0.430766<br>2018-04-02  0.745403  0.529783  0.390616 -0.349892<br>2018-04-03 -0.332525  0.146019 -0.361226 -0.666926<br>```</p>
+<p>df.sort_index(axis=1, ascending=False) # axis = 0 就是列了<br>                   D         C         B         A<br>2018-03-29  0.621323  0.232728 -0.245439  1.887637<br>2018-03-30 -0.687133  0.794514  0.462420 -2.270712<br>2018-03-31 -1.453160 -0.512256  0.554050 -1.068204<br>2018-04-01 -1.947354  1.232493  0.656760  0.430766<br>2018-04-02  0.745403  0.529783  0.390616 -0.349892<br>2018-04-03 -0.332525  0.146019 -0.361226 -0.666926<br>```</p>
 </blockquote>
 </blockquote>
 <h3 id="6、按值进行排序："><a href="#6、按值进行排序：" class="headerlink" title="6、按值进行排序："></a>6、按值进行排序：</h3><pre><code>&gt;&gt; df.sort_values(&#39;B&#39;)
@@ -653,11 +652,12 @@ max    1.0  1.0  3.0
 2018-04-02 -0.349892  0.390616  0.529783  0.745403
 2018-04-03 -0.666926 -0.361226  0.146019 -0.332525
 </code></pre></blockquote>
-<h2 id="三、选择"><a href="#三、选择" class="headerlink" title="三、选择"></a>三、选择</h2><blockquote>
-<ul>
+<hr>
+<blockquote>
+<h2 id="三、选择"><a href="#三、选择" class="headerlink" title="三、选择"></a>三、选择</h2><ul>
 <li>虽然标准的Python/Numpy的选择和设置表达式都能够直接派上用场，但是作为工程使用的代码，我们推荐使用经过优化的pandas数据访问方式： .at, .iat, .loc, .iloc 和 .ix详情请参阅<a href="http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing" target="_blank" rel="external">Indexing and Selecing Data</a> 和 <a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced" target="_blank" rel="external">MultiIndex / Advanced Indexing</a>。</li>
 </ul>
-<h3 id="获取："><a href="#获取：" class="headerlink" title="获取："></a>获取：</h3><ul>
+<h3 id="1、获取："><a href="#1、获取：" class="headerlink" title="1、获取："></a>1、获取：</h3><ul>
 <li><code>df[&#39;A&#39;]</code>选择一个单独的列，这将会返回一个<code>Series</code>，等同于<code>df.A</code><pre><code>&gt;&gt; df[&#39;A&#39;]
 2018-03-29    1.887637
 2018-03-30   -2.270712
@@ -679,7 +679,7 @@ Freq: D, Name: A, dtype: float64
 2018-03-31 -1.068204  0.554050 -0.512256 -1.453160
 </code></pre></li>
 </ul>
-<h3 id="通过标签选择"><a href="#通过标签选择" class="headerlink" title="通过标签选择"></a>通过标签选择</h3><ul>
+<h3 id="2、通过标签选择"><a href="#2、通过标签选择" class="headerlink" title="2、通过标签选择"></a>2、通过标签选择</h3><ul>
 <li>使用标签来获取一个交叉的区域：<pre><code>&gt;&gt; df.loc[dates[0]]
 A    1.887637
 B   -0.245439
@@ -702,7 +702,774 @@ Name: 2018-03-29 00:00:00, dtype: float64
 2018-04-02 -0.349892  0.529783
 2018-04-03 -0.666926  0.146019
 </code></pre></li>
-<li></li>
+<li>标签切片</li>
+</ul>
+</blockquote>
+<pre><code>&gt;&gt;&gt; df.loc[&#39;20180412&#39;:&#39;20180413&#39;, [&#39;A&#39;, &#39;C&#39;]]
+            A  C
+2018-04-12  1  1
+2018-04-13  1  1
+</code></pre><blockquote>
+<ul>
+<li><p>对返回的对象进行维度缩减，类似在二维数组中保存一维数组，最终取出一维数组。</p>
+<pre><code>&gt;&gt; df.loc[&#39;20180411&#39;, [&#39;A&#39;,&#39;D&#39;]]
+A    1
+D    3
+Name: 2018-04-11 00:00:00, dtype: object
+</code></pre></li>
+<li><p>获取标量，进一步维度缩减吧。</p>
+<pre><code>&gt;&gt; df.loc[&#39;20180411&#39;, &#39;E&#39;]
+&#39;test&#39;
+</code></pre></li>
+<li><p>快速访问一个标量，和上方法相同</p>
+<pre><code>&gt;&gt; df.at[&#39;20180411&#39;, &#39;E&#39;]
+&#39;test&#39;
+</code></pre></li>
+</ul>
+<h3 id="3、通过位置选择"><a href="#3、通过位置选择" class="headerlink" title="3、通过位置选择"></a>3、通过位置选择</h3><ul>
+<li><p>通过传递数值进行位置选择（选择的是行）, <code>i</code>代表的是index？？？</p>
+<pre><code>&gt;&gt; df.iloc[3] # 选择第四行
+A                      1
+B    2018-03-29 00:00:00
+C                      1
+D                      3
+E                  train
+F                    foo
+Name: 2018-04-14 00:00:00, dtype: object
+</code></pre></li>
+<li><p>通过数值进行切片，与<code>numpy</code>/<code>python</code>中的情况类似</p>
+<pre><code>&gt;&gt; df.iloc[1:3, 2:4] # 选择1-2行，2-3列
+          C  D
+2018-04-12  1  3
+2018-04-13  1  3
+</code></pre></li>
+<li><p>对行进行切片</p>
+<pre><code>&gt;&gt; df.iloc[1:3, :] # 1-2行，所有列
+          A          B  C  D      E    F
+2018-04-12  1 2018-03-29  1  3  train  foo
+2018-04-13  1 2018-03-29  1  3   test  foo
+</code></pre></li>
+<li><p>对列进行切片</p>
+<pre><code>&gt;&gt; df.iloc[:, 2:4] # 全部行，2-3列
+          C  D
+2018-04-11  1  3
+2018-04-12  1  3
+2018-04-13  1  3
+2018-04-14  1  3
+</code></pre></li>
+<li><p>获取特定的值</p>
+<pre><code>&gt;&gt; df.iloc[1,4] # 选择1行的第5个元素
+&#39;train&#39;
+&gt;&gt; df.iat[1,4] # 和上述的loc at iloc对应，带i的是对类似数组的方式访问
+&#39;train&#39;
+</code></pre></li>
+</ul>
+<h3 id="4、布尔索引"><a href="#4、布尔索引" class="headerlink" title="4、布尔索引"></a>4、布尔索引</h3><ul>
+<li><p>使用一个单独列的值来选择数据，感觉是和numpy一样的操作。</p>
+<pre><code>&gt;&gt; df
+                 A         B         C         D
+2018-04-11 -0.859904  0.359774 -0.496582 -0.402911
+2018-04-12 -0.025578  0.448901  1.536109 -0.846593
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752
+2018-04-14  0.396720 -0.248795  0.376469  0.630602
+2018-04-15 -0.051567 -0.751154 -0.842248  0.418928
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237
+&gt;&gt; df[df.A &gt; 0]
+                 A         B         C         D
+2018-04-14  0.396720 -0.248795  0.376469  0.630602
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237
+&gt;&gt; df.A &gt; 0
+2018-04-11    False
+2018-04-12    False
+2018-04-13    False
+2018-04-14     True
+2018-04-15    False
+2018-04-16     True
+Freq: D, Name: A, dtype: bool
+</code></pre></li>
+<li><p>使用where操作选择数据:</p>
+<pre><code>&gt;&gt; df[df &gt; 0] # 取出所有大于零的数据
+                 A         B         C         D
+2018-04-11       NaN  0.359774       NaN       NaN
+2018-04-12       NaN  0.448901  1.536109       NaN
+2018-04-13       NaN  1.803274       NaN  1.344752
+2018-04-14  0.396720       NaN  0.376469  0.630602
+2018-04-15       NaN       NaN       NaN  0.418928
+2018-04-16  0.174124       NaN       NaN  1.005237
+&gt;&gt; df &gt; 0
+              A      B      C      D
+2018-04-11  False   True  False  False
+2018-04-12  False   True   True  False
+2018-04-13  False   True  False   True
+2018-04-14   True  False   True   True
+2018-04-15  False  False  False   True
+2018-04-16   True  False  False   True
+</code></pre></li>
+</ul>
+<p>使用isin()方法来过滤</p>
+<pre><code>&gt;&gt; df2 = df.copy()
+&gt;&gt; df2[&#39;E&#39;] = [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;four&#39;, &#39;three&#39;]
+&gt;&gt; df2
+                   A         B         C         D      E
+2018-04-11 -0.859904  0.359774 -0.496582 -0.402911    one
+2018-04-12 -0.025578  0.448901  1.536109 -0.846593    one
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752    two
+2018-04-14  0.396720 -0.248795  0.376469  0.630602  three
+2018-04-15 -0.051567 -0.751154 -0.842248  0.418928   four
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237  three
+&gt;&gt; df2[&#39;E&#39;].isin([&#39;three&#39;, &#39;two&#39;])
+2018-04-11    False
+2018-04-12    False
+2018-04-13     True
+2018-04-14     True
+2018-04-15    False
+2018-04-16     True
+Freq: D, Name: E, dtype: bool
+&gt;&gt; df2[df2[&#39;E&#39;].isin([&#39;three&#39;, &#39;two&#39;])]
+                   A         B         C         D      E
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752    two
+2018-04-14  0.396720 -0.248795  0.376469  0.630602  three
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237  three
+</code></pre><h2 id="三、设置"><a href="#三、设置" class="headerlink" title="三、设置"></a>三、设置</h2><ul>
+<li><p>设置一个新的列：</p>
+<pre><code>&gt;&gt; s1 = pd.Series(range(1,7), index=pd.date_range(&#39;20180411&#39;, periods=6))
+&gt;&gt; s1
+2018-04-11    1
+2018-04-12    2
+2018-04-13    3
+2018-04-14    4
+2018-04-15    5
+2018-04-16    6
+Freq: D, dtype: int64
+&gt;&gt; df[&#39;F&#39;] = s1
+&gt;&gt; df
+                 A         B         C         D  F
+2018-04-11 -0.859904  0.359774 -0.496582 -0.402911  1
+2018-04-12 -0.025578  0.448901  1.536109 -0.846593  2
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752  3
+2018-04-14  0.396720 -0.248795  0.376469  0.630602  4
+2018-04-15 -0.051567 -0.751154 -0.842248  0.418928  5
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237  6
+</code></pre></li>
+<li><p>通过标签设置新的值：</p>
+<pre><code>&gt;&gt; df.at[dates[0], &#39;A&#39;]
+-0.85990391422115631
+&gt;&gt; df.at[dates[0], &#39;A&#39;] = 0
+&gt;&gt; df
+                 A         B         C         D  F
+2018-04-11  0.000000  0.359774 -0.496582 -0.402911  1
+2018-04-12 -0.025578  0.448901  1.536109 -0.846593  2
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752  3
+2018-04-14  0.396720 -0.248795  0.376469  0.630602  4
+2018-04-15 -0.051567 -0.751154 -0.842248  0.418928  5
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237  6
+</code></pre></li>
+<li><p>通过位置设置新的值：</p>
+<pre><code>&gt;&gt; df.iat[0,0]
+0.0
+&gt;&gt; df.iat[0,0] = 1
+&gt;&gt; df
+                 A         B         C         D  F
+2018-04-11  1.000000  0.359774 -0.496582 -0.402911  1
+2018-04-12 -0.025578  0.448901  1.536109 -0.846593  2
+2018-04-13 -0.353849  1.803274 -1.299532  1.344752  3
+2018-04-14  0.396720 -0.248795  0.376469  0.630602  4
+2018-04-15 -0.051567 -0.751154 -0.842248  0.418928  5
+2018-04-16  0.174124 -0.234736 -1.777619  1.005237  6
+</code></pre></li>
+<li><p>通过一个numpy数组设置一组新值，就是将一系列位置的值更改。</p>
+<pre><code>&gt;&gt; df.loc[:, &#39;D&#39;] = np.array([5] * len(df))
+&gt;&gt; df
+                 A         B         C  D  F
+2018-04-11  1.000000  0.359774 -0.496582  5  1
+2018-04-12 -0.025578  0.448901  1.536109  5  2
+2018-04-13 -0.353849  1.803274 -1.299532  5  3
+2018-04-14  0.396720 -0.248795  0.376469  5  4
+2018-04-15 -0.051567 -0.751154 -0.842248  5  5
+2018-04-16  0.174124 -0.234736 -1.777619  5  6
+</code></pre></li>
+<li><p>通过where操作来设置新的值</p>
+<pre><code>&gt;&gt; df2[df2 &gt; 1]
+           A         B         C  D    F
+2018-04-11 NaN       NaN       NaN  5  NaN
+2018-04-12 NaN       NaN  1.536109  5  2.0
+2018-04-13 NaN  1.803274       NaN  5  3.0
+2018-04-14 NaN       NaN       NaN  5  4.0
+2018-04-15 NaN       NaN       NaN  5  5.0
+2018-04-16 NaN       NaN       NaN  5  6.0
+&gt;&gt; df2[df2 &gt; 1] = -df2
+&gt;&gt; df2
+                 A         B         C  D  F
+2018-04-11  1.000000  0.359774 -0.496582 -5  1
+2018-04-12 -0.025578  0.448901 -1.536109 -5 -2
+2018-04-13 -0.353849 -1.803274 -1.299532 -5 -3
+2018-04-14  0.396720 -0.248795  0.376469 -5 -4
+2018-04-15 -0.051567 -0.751154 -0.842248 -5 -5
+2018-04-16  0.174124 -0.234736 -1.777619 -5 -6
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="四、缺失值处理"><a href="#四、缺失值处理" class="headerlink" title="四、缺失值处理"></a>四、缺失值处理</h2><ul>
+<li><p>在pandas中，使用np.nan来代替缺失值，这些值将默认不会包含在计算中，详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data" target="_blank" rel="external">Missing Data Section</a></p>
+</li>
+<li><p>1、<code>reindex()</code>方法可以针对指定轴上的索引进行改变、增加、删除操作，这将返回原始数据的一个拷贝：</p>
+<pre><code>&gt;&gt; df1 = df.reindex(index=dates[0:4], columns=list(df.columns) + [&#39;E&#39;])
+&gt;&gt; df1
+                 A         B         C  D  F   E
+2018-04-11  1.000000  0.359774 -0.496582  5  1 NaN
+2018-04-12 -0.025578  0.448901  1.536109  5  2 NaN
+2018-04-13 -0.353849  1.803274 -1.299532  5  3 NaN
+2018-04-14  0.396720 -0.248795  0.376469  5  4 NaN
+&gt;&gt; df1.loc[dates[0]:dates[1], &#39;E&#39;] = 1
+&gt;&gt; df1
+                 A         B         C  D  F    E
+2018-04-11  1.000000  0.359774 -0.496582  5  1  1.0
+2018-04-12 -0.025578  0.448901  1.536109  5  2  1.0
+2018-04-13 -0.353849  1.803274 -1.299532  5  3  NaN
+2018-04-14  0.396720 -0.248795  0.376469  5  4  NaN
+</code></pre></li>
+<li><p>去掉包含缺失值的行(NaN)：</p>
+<pre><code>&gt;&gt; df1.dropna(how=&#39;any&#39;)
+                 A         B         C  D  F    E
+2018-04-11  1.000000  0.359774 -0.496582  5  1  1.0
+2018-04-12 -0.025578  0.448901  1.536109  5  2  1.0
+</code></pre></li>
+<li><p>对缺失值进行填充(NaN)：</p>
+<pre><code>&gt;&gt; df1.fillna(value=10)
+                 A         B         C  D  F     E
+2018-04-11  1.000000  0.359774 -0.496582  5  1   1.0
+2018-04-12 -0.025578  0.448901  1.536109  5  2   1.0
+2018-04-13 -0.353849  1.803274 -1.299532  5  3  10.0
+2018-04-14  0.396720 -0.248795  0.376469  5  4  10.0
+</code></pre></li>
+<li><p>对数据进行布尔填充，如位置是<code>NaN</code>，那么就是<code>True</code>：</p>
+<pre><code>&gt;&gt; pd.isnull(df1)
+              A      B      C      D      F      E
+2018-04-11  False  False  False  False  False  False
+2018-04-12  False  False  False  False  False  False
+2018-04-13  False  False  False  False  False   True
+2018-04-14  False  False  False  False  False   True
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="五、相关操作"><a href="#五、相关操作" class="headerlink" title="五、相关操作"></a>五、相关操作</h2><ul>
+<li>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-binop" target="_blank" rel="external">Basic Section On Binary Ops</a><h3 id="统计（相关操作通常情况下不包括NaN值）"><a href="#统计（相关操作通常情况下不包括NaN值）" class="headerlink" title="统计（相关操作通常情况下不包括NaN值）"></a>统计（相关操作通常情况下不包括<code>NaN</code>值）</h3></li>
+<li><p>1、执行描述性统计：</p>
+<pre><code>&gt;&gt; df.mean() # 各列求均值
+A    0.189975
+B    0.229544
+C   -0.417234
+D    5.000000
+F    3.500000
+dtype: float64
+</code></pre></li>
+<li><p>2、在其他轴上进行相同的操作：（行）</p>
+<pre><code>&gt;&gt; df.mean(1) # 1代表对行进行求均值，0代表对列求均值
+2018-04-11    1.372638
+2018-04-12    1.791886
+2018-04-13    1.629979
+2018-04-14    1.904879
+2018-04-15    1.671006
+2018-04-16    1.832354
+Freq: D, dtype: float64
+</code></pre></li>
+<li><p>3、对于拥有不同维度，需要对齐的对象进行操作。<code>Pandas</code>会自动的沿着指定的维度进行广播：</p>
+<pre><code>&gt;&gt; s = pd.Series([1,3,5,np.nan,6,8], index=dates).shift(2) # shift感觉类似转移数据，移动前面或者后面采用补`NaN`，支持负数。
+&gt;&gt; s
+2018-04-11    NaN
+2018-04-12    NaN
+2018-04-13    1.0
+2018-04-14    3.0
+2018-04-15    5.0
+2018-04-16    NaN
+Freq: D, dtype: float64
+&gt;&gt; s
+2018-04-11    NaN
+2018-04-12    NaN
+2018-04-13    1.0
+2018-04-14    3.0
+2018-04-15    5.0
+2018-04-16    NaN
+Freq: D, dtype: float64
+&gt;&gt; df.sub(s, axis=&#39;index&#39;) # sub 做减法
+                 A         B         C    D    F
+2018-04-11       NaN       NaN       NaN  NaN  NaN
+2018-04-12       NaN       NaN       NaN  NaN  NaN
+2018-04-13 -1.353849  0.803274 -2.299532  4.0  2.0
+2018-04-14 -2.603280 -3.248795 -2.623531  2.0  1.0
+2018-04-15 -5.051567 -5.751154 -5.842248  0.0  0.0
+2018-04-16       NaN       NaN       NaN  NaN  NaN
+</code></pre></li>
+</ul>
+<h3 id="Apply"><a href="#Apply" class="headerlink" title="Apply"></a>Apply</h3><ul>
+<li>1、对数据应用函数：<pre><code>&gt;&gt; df.apply(np.cumsum) # 应用函数，逐行累加
+                 A         B         C   D   F
+2018-04-11  1.000000  0.359774 -0.496582   5   1
+2018-04-12  0.974422  0.808675  1.039527  10   3
+2018-04-13  0.620573  2.611949 -0.260005  15   6
+2018-04-14  1.017293  2.363153  0.116464  20  10
+2018-04-15  0.965726  1.612000 -0.725784  25  15
+2018-04-16  1.139850  1.377264 -2.503403  30  21
+&gt;&gt; df.apply(lambda x: x.max() - x.min()) # x为接收的一列数据，目的是求极差
+A    1.353849
+B    2.554428
+C    3.313728
+D    0.000000
+F    5.000000
+dtype: float64
+</code></pre></li>
+</ul>
+<h3 id="直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。"><a href="#直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。" class="headerlink" title="直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。"></a>直方图，为何叫直方图：实际是统计数据中相同项的个数，然后可以直接画图吧。</h3><ul>
+<li>具体参考：<a href="http://pandas.pydata.org/pandas-docs/stable/basics.html#basics-discretization" target="_blank" rel="external">Histogramming and Discretization</a><pre><code>&gt;&gt; s = pd.Series(np.random.randint(0,7, size=10))
+&gt;&gt; s
+0    3
+1    6
+2    2
+3    0
+4    0
+5    3
+6    5
+7    0
+8    4
+9    0
+dtype: int32
+&gt;&gt; s.value_counts()
+0    4
+3    2
+6    1
+5    1
+4    1
+2    1
+dtype: int64
+</code></pre></li>
+</ul>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><p><code>Series</code>对象在其str属性中配备了一组字符串处理方法，可以很容易的应用到数组中的每个元素，如下段代码所示。更多详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/text.html#text-string-methods" target="_blank" rel="external">Vectorized String Methods</a>。</p>
+<pre><code>&gt;&gt; s = pd.Series([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;Aaba&#39;, &#39;Baca&#39;, np.nan, &#39;CABA&#39;, &#39;dog&#39;, &#39;cat&#39;])
+&gt;&gt; s.str.lower()
+0       a
+1       b
+2       c
+3    aaba
+4    baca
+5     NaN
+6    caba
+7     dog
+8     cat
+dtype: object
+</code></pre><ul>
+<li>有如下方法可以使用，基本都是<code>str</code>的方法吧：<br><code>[&#39;capitalize&#39;,&#39;cat&#39;, &#39;center&#39;, &#39;contains&#39;, &#39;count&#39;, &#39;decode&#39;, &#39;encode&#39;, &#39;endswith&#39;, &#39;extract&#39;,&#39;extractall&#39;, &#39;find&#39;, &#39;findall&#39;, &#39;get&#39;, &#39;get_dummies&#39;, &#39;index&#39;, &#39;isalnum&#39;, &#39;isalpha&#39;, &#39;isdecimal&#39;, &#39;isdigit&#39;, &#39;islower&#39;, &#39;isnumeric&#39;, &#39;isspace&#39;, &#39;istitle&#39;, &#39;isupper&#39;, &#39;join&#39;, &#39;len&#39;, &#39;ljust&#39;, &#39;lower&#39;, &#39;lstrip&#39;, &#39;match&#39;, &#39;normalize&#39;, &#39;pad&#39;,&#39;partition&#39;, &#39;repeat&#39;, &#39;replace&#39;, &#39;rfind&#39;, &#39;rindex&#39;, &#39;rjust&#39;, &#39;rpartition&#39;, &#39;rsplit&#39;, &#39;rstrip&#39;, &#39;slice&#39;, &#39;slice_replace&#39;, &#39;split&#39;, &#39;startswith&#39;, &#39;strip&#39;, &#39;swapcase&#39;, &#39;title&#39;, &#39;translate&#39;, &#39;upper&#39;, &#39;wrap&#39;, &#39;zfill&#39;]</code></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="六、合并"><a href="#六、合并" class="headerlink" title="六、合并"></a>六、合并</h2><ul>
+<li><code>Pandas</code>提供了大量的方法能够轻松的对Series，DataFrame和Panel对象就行各种符合这种逻辑关键的合并，具体详阅：<a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging" target="_blank" rel="external">Merging section</a></li>
+<li><p>1.1、Concat，做连接行的操作。</p>
+<pre><code>&gt;&gt; df = pd.DataFrame(np.random.randn(10,7))
+&gt;&gt; df
+        0         1         2         3         4         5         6
+0  0.553137 -0.461531 -0.178430  0.059118 -0.817795 -0.661965  0.593987
+1  1.415022  0.237064 -0.754901  0.654607  1.074064  1.140084 -1.159549
+2 -0.605326 -0.410053 -0.020292 -0.727507 -0.294475  0.799932 -0.118478
+3  0.954070  0.318788  0.191754 -1.127220  0.294069 -0.245938 -0.402836
+4  0.391626 -1.019158  0.759993 -1.401365  0.187595 -0.961535 -2.475896
+5 -1.755276 -1.126669 -1.522097 -0.832615 -0.263640 -1.142642 -0.802544
+6  0.055710  0.823794 -0.523068 -0.619966 -0.241422  0.894117 -0.011115
+7 -0.559937  1.382979  2.352500 -0.500757 -0.601975  2.136011 -1.119064
+8  0.631365  0.399121  0.960120  0.667968  1.609791 -0.775155  0.303688
+9  1.071855 -0.546073  0.200751  1.845542  0.823959  0.768150  0.935161
+&gt;&gt; pieces = [df[:3], df[3:7], df[7:]]
+&gt;&gt; pd.concat(pieces)
+        0         1         2         3         4         5         6
+0  0.553137 -0.461531 -0.178430  0.059118 -0.817795 -0.661965  0.593987
+1  1.415022  0.237064 -0.754901  0.654607  1.074064  1.140084 -1.159549
+2 -0.605326 -0.410053 -0.020292 -0.727507 -0.294475  0.799932 -0.118478
+3  0.954070  0.318788  0.191754 -1.127220  0.294069 -0.245938 -0.402836
+4  0.391626 -1.019158  0.759993 -1.401365  0.187595 -0.961535 -2.475896
+5 -1.755276 -1.126669 -1.522097 -0.832615 -0.263640 -1.142642 -0.802544
+6  0.055710  0.823794 -0.523068 -0.619966 -0.241422  0.894117 -0.011115
+7 -0.559937  1.382979  2.352500 -0.500757 -0.601975  2.136011 -1.119064
+8  0.631365  0.399121  0.960120  0.667968  1.609791 -0.775155  0.303688
+9  1.071855 -0.546073  0.200751  1.845542  0.823959  0.768150  0.935161
+</code></pre></li>
+<li><p>1.2、join 类似于SQL类型的合并，具体请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-join" target="_blank" rel="external">Database style joining</a></p>
+<pre><code>&gt;&gt; left = pd.DataFrame({&#39;key&#39;:[&#39;foo&#39;, &#39;foo&#39;], &#39;lval&#39;:[1,2]})
+&gt;&gt; left
+ key  lval
+0  foo     1
+1  foo     2
+&gt;&gt; right = pd.DataFrame({&#39;key&#39;:[&#39;foo&#39;, &#39;foo&#39;], &#39;lval&#39;:[4,5]})
+&gt;&gt; right
+ key  lval
+0  foo     4
+1  foo     5
+&gt;&gt; pd.merge(left, right, on=&#39;key&#39;)
+ key  lval_x  lval_y
+0  foo       1       4
+1  foo       1       5
+2  foo       2       4
+3  foo       2       5
+&gt;&gt;
+</code></pre></li>
+<li><p>1.3、Append将一行连接到一个DataFrame上，具体请参考 <a href="http://pandas.pydata.org/pandas-docs/stable/merging.html#merging-concatenation" target="_blank" rel="external">Appending</a>:</p>
+<pre><code>&gt;&gt; df = pd.DataFrame(np.random.randn(8,4), columns=list(&#39;ABCD&#39;))
+&gt;&gt; df
+        A         B         C         D
+0  0.131836 -1.771433 -0.695097 -0.247473
+1  2.501394  0.992452  0.088223 -0.066071
+2 -0.041648  0.886106 -1.409708  0.485876
+3  2.458939  0.136338  0.727887  0.998972
+4 -1.382066 -0.175513 -0.980074  0.586191
+5  0.456496  0.061632  2.138576  1.551554
+6 -0.134137  1.508475 -0.178692  0.113549
+7  0.753561 -0.608606 -0.209655 -0.102295
+&gt;&gt; line = df.iloc[3]
+&gt;&gt; line
+A    2.458939
+B    0.136338
+C    0.727887
+D    0.998972
+Name: 3, dtype: float64
+&gt;&gt; df.append(line)
+        A         B         C         D
+0  0.131836 -1.771433 -0.695097 -0.247473
+1  2.501394  0.992452  0.088223 -0.066071
+2 -0.041648  0.886106 -1.409708  0.485876
+3  2.458939  0.136338  0.727887  0.998972
+4 -1.382066 -0.175513 -0.980074  0.586191
+5  0.456496  0.061632  2.138576  1.551554
+6 -0.134137  1.508475 -0.178692  0.113549
+7  0.753561 -0.608606 -0.209655 -0.102295
+3  2.458939  0.136338  0.727887  0.998972
+&gt;&gt; df.append(line, ignore_index=True)
+        A         B         C         D
+0  0.131836 -1.771433 -0.695097 -0.247473
+1  2.501394  0.992452  0.088223 -0.066071
+2 -0.041648  0.886106 -1.409708  0.485876
+3  2.458939  0.136338  0.727887  0.998972
+4 -1.382066 -0.175513 -0.980074  0.586191
+5  0.456496  0.061632  2.138576  1.551554
+6 -0.134137  1.508475 -0.178692  0.113549
+7  0.753561 -0.608606 -0.209655 -0.102295
+8  2.458939  0.136338  0.727887  0.998972
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="七、分组"><a href="#七、分组" class="headerlink" title="七、分组"></a>七、分组</h2><ul>
+<li>对于<code>group by</code>操作，我们通常是指以下一个或多个操作步骤：<br>1、(Splitting) 按照一些规则将数据分为不同的组；<br>2、(Applying) 对于每组数据分别执行一个函数；<br>3、(Combining) 将结果组合到一个数据结构中；<br>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/groupby.html#groupby" target="_blank" rel="external">Grouping section</a><pre><code>&gt;&gt; df = pd.DataFrame({&#39;A&#39; : [&#39;foo&#39;, &#39;bar&#39;, &#39;foo&#39;, &#39;bar&#39;,&#39;foo&#39;, &#39;bar&#39;, &#39;foo&#39;, &#39;foo&#39;], &#39;B&#39; : [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;, &#39;two&#39;, &#39;two&#39;, &#39;one&#39;, &#39;three&#39;], &#39;C&#39; :np.random.randn(8), &#39;D&#39; : np.random.randn(8)})
+&gt;&gt; df
+   A      B         C         D
+0  foo    one -0.118332 -0.833735
+1  bar    one  0.359787  1.333599
+2  foo    two  0.961724 -1.966801
+3  bar  three -3.627354 -0.587706
+4  foo    two -1.281741 -0.403980
+5  bar    two -1.390664 -1.483122
+6  foo    one  1.403112 -0.213065
+7  foo  three  0.399807  0.929839
+</code></pre></li>
+<li>1、分组并对每个分组执行<code>sum</code>函数<pre><code>&gt;&gt; df.groupby(&#39;A&#39;).sum() # 类似分类汇总吧
+          C         D
+A
+bar -4.658232 -0.737229
+foo  1.364570 -2.487742
+</code></pre></li>
+<li>2、对多个列进行分组形成一个层次索引，然后执行函数：<pre><code>&gt;&gt; df.groupby([&#39;A&#39;, &#39;B&#39;]).sum()
+                C         D
+A   B
+bar one    0.359787  1.333599
+  three -3.627354 -0.587706
+  two   -1.390664 -1.483122
+foo one    1.284780 -1.046800
+  three  0.399807  0.929839
+  two   -0.320017 -2.370781
+&gt;&gt;
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="八、Reshaping"><a href="#八、Reshaping" class="headerlink" title="八、Reshaping"></a>八、Reshaping</h2><ul>
+<li>详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/advanced.html#advanced-hierarchical" target="_blank" rel="external">Hierarchical Indexing</a> 和 <a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-stacking" target="_blank" rel="external">Reshaping</a></li>
+<li>1、Stack<pre><code>&gt;&gt; tuples = list(zip(*[[&#39;bar&#39;, &#39;bar&#39;, &#39;baz&#39;, &#39;baz&#39;, &#39;foo&#39;, &#39;foo&#39;, &#39;quz&#39;, &#39;quz&#39;]
+,[&#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;, &#39;one&#39;, &#39;two&#39;]]))
+&gt;&gt; tuples
+[(&#39;bar&#39;, &#39;one&#39;), (&#39;bar&#39;, &#39;two&#39;), (&#39;baz&#39;, &#39;one&#39;), (&#39;baz&#39;, &#39;two&#39;), (&#39;foo&#39;, &#39;one&#39;),
+(&#39;foo&#39;, &#39;two&#39;), (&#39;quz&#39;, &#39;one&#39;), (&#39;quz&#39;, &#39;two&#39;)]
+&gt;&gt; index = pd.MultiIndex.from_tuples(tuples, names=[&#39;first&#39;, &#39;second&#39;])
+&gt;&gt; index
+MultiIndex(levels=[[&#39;bar&#39;, &#39;baz&#39;, &#39;foo&#39;, &#39;quz&#39;], [&#39;one&#39;, &#39;two&#39;]],
+         labels=[[0, 0, 1, 1, 2, 2, 3, 3], [0, 1, 0, 1, 0, 1, 0, 1]],
+         names=[&#39;first&#39;, &#39;second&#39;])
+&gt;&gt; df = pd.DataFrame(np.random.randn(8,2), index=index, columns=[&#39;A&#39;, &#39;B&#39;])
+&gt;&gt; df
+                   A         B
+first second
+bar   one     0.192085  1.408195
+    two     1.866444  0.635571
+baz   one     0.812173 -0.442293
+    two    -0.969346  0.697064
+foo   one    -1.039750 -0.167861
+    two     0.359010  0.795804
+quz   one     0.315553  0.591019
+    two     0.177442 -1.071087
+&gt;&gt; df2 = df[:4]
+&gt;&gt; df2
+                   A         B
+first second
+bar   one     0.192085  1.408195
+    two     1.866444  0.635571
+baz   one     0.812173 -0.442293
+    two    -0.969346  0.697064
+&gt;&gt; stacked = df2.stack()
+&gt;&gt; stacked
+first  second
+bar    one     A    0.192085
+             B    1.408195
+     two     A    1.866444
+             B    0.635571
+baz    one     A    0.812173
+             B   -0.442293
+     two     A   -0.969346
+             B    0.697064
+dtype: float64
+&gt;&gt; stacked.unstack()
+                   A         B
+first second
+bar   one     0.192085  1.408195
+    two     1.866444  0.635571
+baz   one     0.812173 -0.442293
+    two    -0.969346  0.697064
+&gt;&gt; stacked.unstack(1)
+second        one       two
+first
+bar   A  0.192085  1.866444
+    B  1.408195  0.635571
+baz   A  0.812173 -0.969346
+    B -0.442293  0.697064
+&gt;&gt; stacked.unstack(0)
+first          bar       baz
+second
+one    A  0.192085  0.812173
+     B  1.408195 -0.442293
+two    A  1.866444 -0.969346
+     B  0.635571  0.697064
+</code></pre></li>
+<li>2、数据透视表，详情请参阅：<a href="http://pandas.pydata.org/pandas-docs/stable/reshaping.html#reshaping-pivot" target="_blank" rel="external">Pivot Tables</a><pre><code>&gt;&gt; df = pd.DataFrame({&#39;A&#39; : [&#39;one&#39;, &#39;one&#39;, &#39;two&#39;, &#39;three&#39;]*3, &#39;B&#39;:[&#39;A&#39;, &#39;B&#39;, &#39;C
+&#39;] * 4, &#39;C&#39;:[&#39;foo&#39;, &#39;foo&#39;, &#39;foo&#39;, &#39;bar&#39;, &#39;bar&#39;, &#39;bar&#39;]*2, &#39;D&#39;:np.random.randn(12
+), &#39;E&#39;:np.random.randn(12)})
+&gt;&gt; df
+      A  B    C         D         E
+0     one  A  foo -2.217020 -0.706020
+1     one  B  foo -0.680808 -1.987900
+2     two  C  foo -1.744418 -0.037439
+3   three  A  bar  1.010820 -0.526640
+4     one  B  bar -0.820246 -0.601110
+5     one  C  bar  1.348459  0.286765
+6     two  A  foo  1.497069  1.148904
+7   three  B  foo -1.284661  1.134721
+8     one  C  foo  0.449730  0.487581
+9     one  A  bar -0.601461  0.177472
+10    two  B  bar -2.329131 -1.519148
+11  three  C  bar  0.058038 -0.217201
+&gt;&gt; pd.pivot_table(df, values=&#39;D&#39;, index=[&#39;A&#39;, &#39;B&#39;], columns=&#39;C&#39;)
+C             bar       foo
+A     B
+one   A -0.601461 -2.217020
+    B -0.820246 -0.680808
+    C  1.348459  0.449730
+three A  1.010820       NaN
+    B       NaN -1.284661
+    C  0.058038       NaN
+two   A       NaN  1.497069
+    B -2.329131       NaN
+    C       NaN -1.744418
+&gt;&gt;
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="九、时间序列"><a href="#九、时间序列" class="headerlink" title="九、时间序列"></a>九、时间序列</h2><ul>
+<li><code>Pandas</code>在对频率转换进行重新采样的时候拥有非常简单、强大且高效的功能（如将按秒采样的数据转换为按5分钟为单位进行采样的数据）。这种操作在金融领域很常见。具体参考：<a href="http://pandas.pydata.org/pandas-docs/stable/timeseries.html#timeseries" target="_blank" rel="external">Time Series section</a><pre><code>&gt;&gt; rng = pd.date_range(&#39;4/17/2018&#39;, periods=100, freq=&#39;S&#39;)
+&gt;&gt; ts = pd.Series(np.random.randint(0, 500, len(rng)), index=rng)
+&gt;&gt; ts.resample(&#39;5Min&#39;, how=&#39;sum&#39;)
+__main__:1: FutureWarning: how in .resample() is deprecated # 最新版本已经被遗弃了
+the new syntax is .resample(...).sum() # 推荐使用这种方式。
+2018-04-17    25671
+Freq: 5T, dtype: int32
+&gt;&gt; ts.resample(&#39;5Min&#39;).sum()
+2018-04-17    25671
+Freq: 5T, dtype: int32
+</code></pre></li>
+<li>1、时区表示<pre><code>&gt;&gt; rng = pd.date_range(&#39;4/17/2018&#39;, periods=5, freq=&#39;D&#39;)
+&gt;&gt; rng
+DatetimeIndex([&#39;2018-04-17&#39;, &#39;2018-04-18&#39;, &#39;2018-04-19&#39;, &#39;2018-04-20&#39;,
+             &#39;2018-04-21&#39;],
+            dtype=&#39;datetime64[ns]&#39;, freq=&#39;D&#39;)
+&gt;&gt; ts = pd.Series(np.random.randn(len(rng)), rng)
+&gt;&gt; ts
+2018-04-17   -0.994141
+2018-04-18    0.713261
+2018-04-19    0.956092
+2018-04-20   -0.186506
+2018-04-21    0.565844
+Freq: D, dtype: float64
+&gt;&gt; ts_utc = ts.tz_localize(&#39;UTC&#39;)
+&gt;&gt; ts_utc
+2018-04-17 00:00:00+00:00   -0.994141
+2018-04-18 00:00:00+00:00    0.713261
+2018-04-19 00:00:00+00:00    0.956092
+2018-04-20 00:00:00+00:00   -0.186506
+2018-04-21 00:00:00+00:00    0.565844
+Freq: D, dtype: float64
+</code></pre></li>
+<li>2、时区转换<pre><code>&gt;&gt; ts_utc.tz_convert(&#39;US/Eastern&#39;) # 北京时间是什么关键字？
+2018-04-16 20:00:00-04:00   -0.994141
+2018-04-17 20:00:00-04:00    0.713261
+2018-04-18 20:00:00-04:00    0.956092
+2018-04-19 20:00:00-04:00   -0.186506
+2018-04-20 20:00:00-04:00    0.565844
+Freq: D, dtype: float64
+&gt;&gt;
+</code></pre></li>
+<li>时间跨度转换<pre><code>&gt;&gt; rng = pd.date_range(&#39;4/17/2018&#39;, periods=5, freq=&#39;M&#39;)
+&gt;&gt; rng
+DatetimeIndex([&#39;2018-04-30&#39;, &#39;2018-05-31&#39;, &#39;2018-06-30&#39;, &#39;2018-07-31&#39;,
+             &#39;2018-08-31&#39;],
+            dtype=&#39;datetime64[ns]&#39;, freq=&#39;M&#39;)
+&gt;&gt; ts = pd.Series(np.random.randn(len(rng)), rng)
+&gt;&gt; ts
+2018-04-30    3.007299
+2018-05-31    2.438724
+2018-06-30   -0.063751
+2018-07-31   -0.825316
+2018-08-31    0.127897
+Freq: M, dtype: float64
+&gt;&gt; ps = ts.to_period()
+&gt;&gt; ps
+2018-04    3.007299
+2018-05    2.438724
+2018-06   -0.063751
+2018-07   -0.825316
+2018-08    0.127897
+Freq: M, dtype: float64
+&gt;&gt; ps.to_timestamp()
+2018-04-01    3.007299
+2018-05-01    2.438724
+2018-06-01   -0.063751
+2018-07-01   -0.825316
+2018-08-01    0.127897
+Freq: MS, dtype: float64
+</code></pre></li>
+<li>4、时间和时间戳之间的转换使得可以使用一些方便的算术函数。<pre><code>&gt;&gt; prng = pd.period_range(&#39;2018Q1&#39;, &#39;2028Q4&#39;, freq=&#39;Q-NOV&#39;)
+&gt;&gt; prng
+PeriodIndex([&#39;2018Q1&#39;, &#39;2018Q2&#39;, &#39;2018Q3&#39;, &#39;2018Q4&#39;, &#39;2019Q1&#39;, &#39;2019Q2&#39;,
+           &#39;2019Q3&#39;, &#39;2019Q4&#39;, &#39;2020Q1&#39;, &#39;2020Q2&#39;, &#39;2020Q3&#39;, &#39;2020Q4&#39;,
+           &#39;2021Q1&#39;, &#39;2021Q2&#39;, &#39;2021Q3&#39;, &#39;2021Q4&#39;, &#39;2022Q1&#39;, &#39;2022Q2&#39;,
+           &#39;2022Q3&#39;, &#39;2022Q4&#39;, &#39;2023Q1&#39;, &#39;2023Q2&#39;, &#39;2023Q3&#39;, &#39;2023Q4&#39;,
+           &#39;2024Q1&#39;, &#39;2024Q2&#39;, &#39;2024Q3&#39;, &#39;2024Q4&#39;, &#39;2025Q1&#39;, &#39;2025Q2&#39;,
+           &#39;2025Q3&#39;, &#39;2025Q4&#39;, &#39;2026Q1&#39;, &#39;2026Q2&#39;, &#39;2026Q3&#39;, &#39;2026Q4&#39;,
+           &#39;2027Q1&#39;, &#39;2027Q2&#39;, &#39;2027Q3&#39;, &#39;2027Q4&#39;, &#39;2028Q1&#39;, &#39;2028Q2&#39;,
+           &#39;2028Q3&#39;, &#39;2028Q4&#39;],
+          dtype=&#39;period[Q-NOV]&#39;, freq=&#39;Q-NOV&#39;)
+&gt;&gt; ts = pd.Series(np.random.randn(len(prng)), prng)
+&gt;&gt; ts.index = (prng.asfreq(&#39;M&#39;, &#39;e&#39;) + 1).asfreq(&#39;H&#39;, &#39;s&#39;) + 9
+&gt;&gt; ts.head()
+2018-03-01 09:00    0.499979
+2018-06-01 09:00   -2.246589
+2018-09-01 09:00   -0.824984
+2018-12-01 09:00   -0.578511
+2019-03-01 09:00   -0.310868
+Freq: H, dtype: float64
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="十、Categorical"><a href="#十、Categorical" class="headerlink" title="十、Categorical"></a>十、Categorical</h2><ul>
+<li>从<code>0.15</code>版本开始，<code>pandas</code>可以在DataFrame中支持Categorical类型的数据，详细请看：<a href="http://pandas.pydata.org/pandas-docs/stable/categorical.html#categorical" target="_blank" rel="external">categorical introduction</a> 和 <a href="http://pandas.pydata.org/pandas-docs/stable/api.html#api-categorical" target="_blank" rel="external">API documentation</a><br><code>&gt;&gt;&gt; df = pd.DataFrame({&#39;id&#39;: [1,2,3,4,5,6], &#39;raw_grade&#39;:[&#39;a&#39;, &#39;b&#39;, &#39;b&#39;, &#39;a&#39;, &#39;a&#39;, &#39;e&#39;]})</code></li>
+<li>将原始的grade转换为Categorical数据类型<pre><code>&gt;&gt; df[&#39;grade&#39;] = df[&#39;raw_grade&#39;].astype(&#39;category&#39;)
+&gt;&gt; df[&#39;grade&#39;]
+0    a
+1    b
+2    b
+3    a
+4    a
+5    e
+Name: grade, dtype: category
+Categories (3, object): [a, b, e]
+</code></pre></li>
+<li><p>将Categorical类型数据命名为更有意义的名称：</p>
+<pre><code>&gt;&gt; df[&#39;grade&#39;].cat.categories = [&#39;very good&#39;, &#39;good&#39;, &#39;very bad&#39;]
+&gt;&gt; df
+ id raw_grade      grade
+0   1         a  very good
+1   2         b       good
+2   3         b       good
+3   4         a  very good
+4   5         a  very good
+5   6         e   very bad
+</code></pre></li>
+<li><p>对类别进行重新排序，并增加完整的类别：</p>
+<pre><code>&gt;&gt; df[&#39;grade&#39;] = df[&#39;grade&#39;].cat.set_categories([&#39;very bad&#39;, &#39;bad&#39;, &#39;medium&#39;, &#39;good&#39;, &#39;very good&#39;])
+&gt;&gt; df[&#39;grade&#39;]
+0    very good
+1         good
+2         good
+3    very good
+4    very good
+5     very bad
+Name: grade, dtype: category
+Categories (5, object): [very bad, bad, medium, good, very good]
+</code></pre></li>
+<li><p>排序按照的是<code>Categorical</code>的顺序进行的而不是按照字典顺序进行：</p>
+<pre><code>&gt;&gt; df.sort_values(&#39;grade&#39;)
+ id raw_grade      grade
+5   6         e   very bad
+1   2         b       good
+2   3         b       good
+0   1         a  very good
+3   4         a  very good
+4   5         a  very good
+</code></pre></li>
+<li><p>对<code>Categorical</code>列进行排序时存在空的类别，目前最新版本是<code>0</code>，而非<code>NaN</code>。</p>
+<pre><code>&gt;&gt; df.groupby(&#39;grade&#39;).size()
+grade
+very bad     1
+bad          0
+medium       0
+good         2
+very good    3
+dtype: int64
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="十一、画图"><a href="#十一、画图" class="headerlink" title="十一、画图"></a>十一、画图</h2><ul>
+<li>具体看文档：<a href="http://pandas.pydata.org/pandas-docs/stable/visualization.html#visualization" target="_blank" rel="external">Plotting docs</a><pre><code>&gt;&gt; ts = pd.Series(np.random.randn(1000), index=pd.date_range(&#39;20180417&#39;, periods=1000))
+&gt;&gt; ts.plot().get_figure().savefig(&#39;ts.png&#39;)
+</code></pre></li>
+<li>对于<code>DataFrame</code>来说，<code>plot</code>是一种将所有列及其标签进行绘制的简便方法：<pre><code>&gt;&gt; df = pd.DataFrame(np.random.randn(1000, 4), index = ts.index, columns=[&#39;A&#39;, &#39;B&#39;, &#39;C&#39;, &#39;D&#39;])
+&gt;&gt; df = df.cumsum()
+&gt;&gt; df.plot().get_figure().savefig(&#39;df.png&#39;)
+</code></pre></li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<h2 id="十二、导入和保存数据"><a href="#十二、导入和保存数据" class="headerlink" title="十二、导入和保存数据"></a>十二、导入和保存数据</h2><ul>
+<li>1、<code>csv</code>，参考：<a href="http://pandas.pydata.org/pandas-docs/stable/io.html#io-store-in-csv" target="_blank" rel="external">Writing to a csv file</a></li>
+<li>1.1、写入文件：<br><code>&gt;&gt;&gt; df.to_csv(&#39;foo.csv&#39;)</code></li>
+<li>1.2、从<code>csv</code>读取：<br><code>&gt;&gt;&gt; pd.read_csv(&#39;foo.csv&#39;)</code></li>
+<li>下面就不用说了，HDF5、Excel基本都是一样，主要考虑的是格式问题，其中读写CSV的时候遇到，单独给某一列数据前面加<code>UFT-8 无BOM</code>格式的前缀，暂时没能找到什么方法解决，<code>\xef\xbb\xbf</code>这个前缀，需要在读取的时候自动匹配去掉。</li>
 </ul>
 </blockquote>
 
@@ -871,7 +1638,7 @@ Name: 2018-03-29 00:00:00, dtype: float64
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python-Pandas-10-minutes/">Python Pandas 10-minutes<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python-gRPC/">Python gRPC<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/git/">git<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/categories/Python/">Python<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/Python-gRPC/">Python gRPC<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/git/">git<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
