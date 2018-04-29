@@ -207,7 +207,7 @@ message HelloReply {
       
         <categories>
             
-            <category> Python gRPC </category>
+            <category> Python </category>
             
         </categories>
         
