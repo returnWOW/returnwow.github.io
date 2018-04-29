@@ -47,7 +47,7 @@
     
     <title>
         
-            归档: 2017/11 | 
+            Pandas如何去除nan值占百分比大于90的列 | 
         
         LKJ Hexo Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",学习 python Pandas filter">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -85,6 +85,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -221,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LKJ Hexo Blog">
-    <meta name="msapplication-starturl" content="https://returnwow.github.io/archives/2017/11/">
+    <meta name="msapplication-starturl" content="https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="LKJ Hexo Blog">
@@ -236,13 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://returnwow.github.io/archives/2017/11/">
+    <meta property="og:url" content="https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/11 | LKJ Hexo Blog">
+    <meta property="og:title" content="Pandas如何去除nan值占百分比大于90的列 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
-    
+    <meta property="og:article:tag" content="学习 python Pandas filter"> 
 
+    
+        <meta property="article:published_time" content="Sun Apr 29 2018 08:58:04 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 29 2018 09:00:13 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://returnwow.github.io/archives/2017/11/index.html" />
+        <link rel="canonical" href="https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html",
+    "headline": "Pandas如何去除nan值占百分比大于90的列",
+    "datePublished": "Sun Apr 29 2018 08:58:04 GMT+0800",
+    "dateModified": "Sun Apr 29 2018 09:00:13 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "LKJ",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LKJ Hexo Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",学习 python Pandas filter",
+    "description": "Blog",
+}
+</script>
 
 
     
@@ -294,281 +330,344 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Pandas如何去除nan值占百分比大于90的列"><span class="post-toc-number">1.</span> <span class="post-toc-text">Pandas如何去除nan值占百分比大于90的列</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#完"><span class="post-toc-number">2.</span> <span class="post-toc-text">完</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/29/python/bs4/learn_bs4/">学习bs4模块</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            学习...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/29/python/bs4/learn_bs4/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/20/python/numpy/02_quickstart_tutorial/">Numpy基础</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Nu...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/20/python/numpy/02_quickstart_tutorial/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 20, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/16/python/numpy/01_what_is_numpy/">What is Numpy</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/16/python/numpy/01_what_is_numpy/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 16, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python/">Python</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/11/05/git/git_rm_use_cached/">Git删除提交的文件</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/11/05/git/git_rm_use_cached/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>11月 05, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/git/">git</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                Pandas如何去除nan值占百分比大于90的列
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>LKJ</strong>
+        <span>4月 29, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/学习-python-Pandas-filter/">学习 python Pandas filter</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Pandas如何去除nan值占百分比大于90的列&url=https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html&pic=https://returnwow.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Pandas如何去除nan值占百分比大于90的列&url=https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html&via=LKJ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://returnwow.github.io/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="Pandas如何去除nan值占百分比大于90的列"><a href="#Pandas如何去除nan值占百分比大于90的列" class="headerlink" title="Pandas如何去除nan值占百分比大于90的列"></a>Pandas如何去除<code>nan</code>值占百分比大于90的列</h1><hr>
+<blockquote>
+<ul>
+<li>前不久看见有人问如何使用<code>Pandas</code>去除一列中的<code>nan</code>值大于90%的列，然后贴出了未实现的代码，刚刚接触到<code>Pandas</code>，于是比较有兴趣，编复制代码，自己实现了一下。</li>
+</ul>
+</blockquote>
+<hr>
+<blockquote>
+<ul>
+<li>原问题：<br>请教一个问题：我想把DataFrame中按列读取时缺失值在90%以上的列全部删除，运行后程序没有出错，但是找不到输出文件，我把网上找来的代码改了一下，如下：</li>
+</ul>
+</blockquote>
+<pre><code>import pandas as pd
+data_file = r&#39;E:\\123.csv&#39;
+df = pd.read_csv(data_file)
+def drop_col(df, cutoff=0.1):# 如果这一列中有90%以上的缺失值，那么就从df中删除这一列
+    n = len(df)
+    cnt = df.count()
+    if (float(cnt) / n) &lt; cutoff:
+        df.drop(axis=1, inplace=1).to_csv(r&#39;E:\\aaa.csv&#39;)
+</code></pre><blockquote>
+<ul>
+<li>如上代码，首先通过<code>csv</code>读取文件，这个方法问题挺多的，首先代码都没有调用drop_col方法，这样运行完全没有问题，但是完全没有用，本地首先想到的是方法未调用的问题，然后就调用呗，我本地修改的代码不是读取<code>csv</code>，所以下面粘贴我本地的代码：</li>
+</ul>
+</blockquote>
+<pre><code>import numpy as np
+import pandas as pd
+
+df = pd.DataFrame({1:[1]*8+[np.nan]*2, 2:[2]*10, 3:[np.nan]*9+[3], 4:[4]*10})
+
+def drop_col(df, cutoff=0.1):#如果这一列中有90%以上的缺失值，那么就从df中删除这一列#
+    n = len(df)
+    cnt = df.count()
+    if (float(cnt) / n) &lt; cutoff:
+        return df.drop(axis=1, inplace=1)
+df = drop_col(df)
+print(df)
+</code></pre><blockquote>
+<ul>
+<li>运行，出错。</li>
+</ul>
+</blockquote>
+<pre><code>Traceback (most recent call last):
+  File &quot;tt.py&quot;, line 22, in &lt;module&gt;
+    df = drop_col(df)
+  File &quot;tt.py&quot;, line 20, in drop_col
+    if (float(cnt) / n) &lt; cutoff:
+  File &quot;C:\Users\liukaijiang\AppData\Roaming\Python\Python36\site-packages\panda
+s\core\series.py&quot;, line 112, in wrapper
+    &quot;{0}&quot;.format(str(converter)))
+TypeError: cannot convert the series to &lt;class &#39;float&#39;&gt;
+</code></pre><blockquote>
+<ul>
+<li>然后经过一番思考，并修改程序并完成功能。（其中第一版本无法得到所有的满足要求的列）</li>
+</ul>
+</blockquote>
+<pre><code>import numpy as np
+import pandas as pd
+
+df = pd.DataFrame({1:[1]*9+[np.nan]*2, 2:[2]*11, 3:[np.nan]*11, 4:[4]*11, 5:[np.nan]*10+[5]}) # 一个包含两列nan值占比大于90%的
+print(df)
+
+def drop_col(df, cutoff=0.1):#如果这一列中有90%以上的缺失值，那么就从df中删除这一列#
+    n = len(df)
+    cnt = df.count() # 对列进行非nan值计数
+    cnt = cnt / n # 求出非nan值的百分比
+
+    return df.loc[:, cnt[cnt &gt;= cutoff].index] # 根据cnt记录的百分比，过滤出cnt百分百大于等于0.1的（也就是去掉nan值大于0.9的索引），然后对df进行选择，行所有，列为满足要求的cnt的索引。
+
+df = drop_col(df)
+print(df)
+</code></pre><blockquote>
+<ul>
+<li>结果显示如下，注意第3（<code>nan</code>值100%）、5（<code>nan</code>值90.9%）列均被选择过滤掉。</li>
+</ul>
+</blockquote>
+<pre><code>&gt;&gt;&gt; df
+      1  2   3  4    5
+0   1.0  2 NaN  4  NaN
+1   1.0  2 NaN  4  NaN
+2   1.0  2 NaN  4  NaN
+3   1.0  2 NaN  4  NaN
+4   1.0  2 NaN  4  NaN
+5   1.0  2 NaN  4  NaN
+6   1.0  2 NaN  4  NaN
+7   1.0  2 NaN  4  NaN
+8   1.0  2 NaN  4  NaN
+9   NaN  2 NaN  4  NaN
+10  NaN  2 NaN  4  5.0
+&gt;&gt;&gt; drop_col(df)
+      1  2  4
+0   1.0  2  4
+1   1.0  2  4
+2   1.0  2  4
+3   1.0  2  4
+4   1.0  2  4
+5   1.0  2  4
+6   1.0  2  4
+7   1.0  2  4
+8   1.0  2  4
+9   NaN  2  4
+10  NaN  2  4
+</code></pre><h1 id="完"><a href="#完" class="headerlink" title="完"></a>完</h1>
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxMi8xMDE2Nw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/03/31/python/gRPC/learn_gRPC/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -906,6 +1005,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -918,6 +1021,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
