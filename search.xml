@@ -20,7 +20,7 @@
 <pre><code>import pandas as pd
 data_file = r&#39;E:\\123.csv&#39;
 df = pd.read_csv(data_file)
-def drop_col(df, cutoff=0.1):# 如果这一列中有90%以上的缺失值，那么就从df中删除这一列
+def drop_col(df, cutoff=0.1): # 如果这一列中有90%以上的缺失值，那么就从df中删除这一列
     n = len(df)
     cnt = df.count()
     if (float(cnt) / n) &lt; cutoff:
@@ -35,7 +35,7 @@ import pandas as pd
 
 df = pd.DataFrame({1:[1]*8+[np.nan]*2, 2:[2]*10, 3:[np.nan]*9+[3], 4:[4]*10})
 
-def drop_col(df, cutoff=0.1):#如果这一列中有90%以上的缺失值，那么就从df中删除这一列#
+def drop_col(df, cutoff=0.1): # 如果这一列中有90%以上的缺失值，那么就从df中删除这一列
     n = len(df)
     cnt = df.count()
     if (float(cnt) / n) &lt; cutoff:
@@ -67,7 +67,7 @@ import pandas as pd
 df = pd.DataFrame({1:[1]*9+[np.nan]*2, 2:[2]*11, 3:[np.nan]*11, 4:[4]*11, 5:[np.nan]*10+[5]}) # 一个包含两列nan值占比大于90%的
 print(df)
 
-def drop_col(df, cutoff=0.1):#如果这一列中有90%以上的缺失值，那么就从df中删除这一列#
+def drop_col(df, cutoff=0.1): # 如果这一列中有90%以上的缺失值，那么就从df中删除这一列
     n = len(df)
     cnt = df.count() # 对列进行非nan值计数
     cnt = cnt / n # 求出非nan值的百分比
