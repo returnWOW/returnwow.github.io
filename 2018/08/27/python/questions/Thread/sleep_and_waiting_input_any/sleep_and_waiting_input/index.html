@@ -47,7 +47,7 @@
     
     <title>
         
-            归档: 2018/4 | 
+            threading.Event实现等待输入，打印输入并自动退出程序 | 
         
         LKJ Hexo Blog
     </title>
@@ -58,7 +58,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content="">
+    <meta name="keywords" content=",python Thread Event 线程事件">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -85,6 +85,9 @@
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
         
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/github-v2.min.css?AfzKxt++K+/lhZBlSjnxwg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
             
         
 
@@ -221,7 +224,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="LKJ Hexo Blog">
-    <meta name="msapplication-starturl" content="https://returnwow.github.io/archives/2018/04/">
+    <meta name="msapplication-starturl" content="https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="LKJ Hexo Blog">
@@ -236,13 +239,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://returnwow.github.io/archives/2018/04/">
+    <meta property="og:url" content="https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/4 | LKJ Hexo Blog">
+    <meta property="og:title" content="threading.Event实现等待输入，打印输入并自动退出程序 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
-    
+    <meta property="og:article:tag" content="python Thread Event 线程事件"> 
 
+    
+        <meta property="article:published_time" content="Mon Aug 27 2018 22:04:58 GMT+0800">
+        <meta property="article:modified_time" content="Mon Sep 10 2018 23:52:39 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,13 +256,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://returnwow.github.io/archives/2018/04/index.html" />
+        <link rel="canonical" href="https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html",
+    "headline": "threading.Event实现等待输入，打印输入并自动退出程序",
+    "datePublished": "Mon Aug 27 2018 22:04:58 GMT+0800",
+    "dateModified": "Mon Sep 10 2018 23:52:39 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "LKJ",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "LKJ Hexo Blog",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": ",python Thread Event 线程事件",
+    "description": "Blog",
+}
+</script>
 
 
     
@@ -294,98 +330,348 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#线程等待输入，打印输入并自动退出程序，超时自动退出"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程等待输入，打印输入并自动退出程序，超时自动退出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#最好的实现如下："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">最好的实现如下：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思考"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">思考</span></a></li></ol></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/">Pandas如何去除nan值占百分比大于90的列</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="LKJ's avatar">
-            </div>
-            <div>
-                <strong>LKJ</strong>
-                <span>4月 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-              <!-- Category -->
-              <span class="post_entry-category">
-                  <a class="post_category-link" href="/categories/Python-Question/">Python Question</a>
-              </span>
-            
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                threading.Event实现等待输入，打印输入并自动退出程序
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>LKJ</strong>
+        <span>8月 27, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/python-Thread-Event-线程事件/">python Thread Event 线程事件</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=threading.Event实现等待输入，打印输入并自动退出程序&url=https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html&pic=https://returnwow.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=threading.Event实现等待输入，打印输入并自动退出程序&url=https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html&via=LKJ" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h1 id="线程等待输入，打印输入并自动退出程序，超时自动退出"><a href="#线程等待输入，打印输入并自动退出程序，超时自动退出" class="headerlink" title="线程等待输入，打印输入并自动退出程序，超时自动退出"></a>线程等待输入，打印输入并自动退出程序，超时自动退出</h1><hr>
+<blockquote>
+<ul>
+<li>问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</li>
+</ul>
+</blockquote>
+<h2 id="最好的实现如下："><a href="#最好的实现如下：" class="headerlink" title="最好的实现如下："></a>最好的实现如下：</h2><hr>
+<pre><code>import threading
+
+# @func 输入打印函数
+# @params t 超时时间 event 线程事件对象，用于协调线程
+def print_input(t, event):
+    s = input(&#39;请在%ss内输入您想要输入的字符串：&#39; % t)
+    print(&#39;您的输入是：%s&#39; % s)
+    event.set() # 设置标志为True api说的是将唤醒所有的线程
+
+
+# @func 超时函数
+# @params t 超时时间 event 线程事件对象，用于协调线程
+def my_sleep(t, event):
+    event.wait(timeout=t) # 等待超时时间，但是如果调用set之后，该函数立即返回并结束
+
+
+sleep_time = 3
+event = threading.Event()
+sleep = threading.Thread(target=my_sleep, args=(sleep_time, event))
+input_str = threading.Thread(target=print_input, args=(sleep_time, event))
+input_str.daemon = True
+input_str.start()
+sleep.start()
+</code></pre><blockquote>
+<ul>
+<li>说明：新建两个线程，其中一个为线程事件，完成等待相应的时间，另外的线程是<code>print_input</code>方法，由于<code>input</code>会导致阻塞，然后新建线程设置<code>deamon</code>为<code>True</code>，主线程结束的时候<code>input</code>阻塞线程也结束，从而实现超时结束，其中<code>event</code>的<code>wait</code>为等待，参数是超时时间，当<code>input</code>线程完成运行<code>event.set()</code>，这个方法设置一个<code>flag</code>为<code>True</code>，会唤醒其它线程，并使得<code>wait</code>函数直接返回结束，那么：</li>
+<li>1、当有输入的时候，<code>input</code>不阻塞，然后运行<code>event.set()</code>，<code>event.wait()</code>直接返回，结束超时检查，最终结束程序；</li>
+<li>2、当没有输入的时候，<code>event.set()</code>由于<code>input</code>阻塞不会运行，程序直到指定等待时间完成之后，<code>sleep</code>线程结束，主线程结束，由于而<code>input</code>由于<code>daemon</code>设置随之结束，不再阻塞。</li>
+</ul>
+</blockquote>
+<pre><code>import time
+import sys
+import threading
+from queue import Queue
+
+q = Queue()
+global_s = None
+
+
+# @func 获取输入的子线程方法
+def set_input():
+    global global_s
+    global_s = input(&#39;3秒钟无任何输入自动退出：&#39;)
+
+
+# @func 检查输入，并检查超时函数
+# @params q Queue消息队列
+def get_input(q):
+    thread = threading.Thread(target=set_input) # 新建输入线程
+    thread.start()
+    thread.join()
+    while True:
+        que_str = q.get()
+
+        if global_s:
+            q.put(&#39;Exit&#39;)
+            print(&#39;您输入了：%s&#39; % global_s)
+            sys.exit(0)
+
+        q.put(&#39;Con&#39;)
+        if que_str == &#39;Exit&#39;:
+            sys.exit(0) # 正常退出
+
+
+# @func 睡眠，完成超时判断
+# @params t 时间 q Queue队列对象
+def my_sleep(t, q): 
+    for i in range(1, t + 1):
+        q.put(&#39;Sleep&#39;)
+        time.sleep(1)
+
+        que_str = q.get()
+
+        if que_str == &#39;Exit&#39;:
+            sys.exit(0) # 正常退出
+
+    q.put(&#39;Exit&#39;)
+
+
+wait_thread = threading.Thread(target=my_sleep, args=(3,q))
+input_thread = threading.Thread(target=get_input, args=(q,))
+input_thread.daemon = True
+input_thread.start()
+wait_thread.start()
+</code></pre><blockquote>
+<ul>
+<li>说明：这个属于自己靠着自己了解通过<code>Queue</code>实现的一个不完美的方案，首先了解到<code>input</code>是阻塞的，所以想到了在新建一个线程来获取输入并阻塞在那里<code>set_input</code>，<code>get_input</code>和<code>my_sleep</code>完成<code>Queue</code>交互来实现目标的功能，主要流程：</li>
+<li>1 <code>set_input</code>线程里边新建一个线程，完成阻塞的<code>input</code>方法等待输入；</li>
+<li>2 随后和<code>my_sleep</code>进行数据交换，首先从队列里边<code>put</code>一个<code>Sleep</code>字符串，<code>get_input</code>判断全局变量<code>global_s</code>是否存在数据，存在数据就直接<code>put</code>一个<code>Exit</code>字符串，以告知<code>my_sleep</code>结束（这点就是导致程序在字符串输入之后也会暂停一秒猜结束的原因，而<code>my_sleep</code>里边的<code>time.sleep(1)</code>也必须在当前位置，否则会导致自己<code>put</code>的’Sleep’字符串被自己的<code>q.get()</code>给获取到，导致无法结束，这点可能可以通过两个<code>Queue</code>对象来解决，本地暂时未实现）</li>
+<li>3 如果全局变量<code>global_s</code>为空，然后<code>get_input</code>里边<code>if que_str == &#39;Exit&#39;</code>判断队列读取的不是<code>Exit</code>就继续取得下一个队列的数据。</li>
+<li>4 这样直到<code>my_sleep</code>里边的<code>for</code>循环结束，然后就会在队列里边写<code>Exit</code>，然后<code>get_input</code>读取到就退出，相应的<code>join</code>阻塞读取输入的线程也结束。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote>
+<ul>
+<li>看到该问题，首先想到的就是在其它线程里边有没有结束当前线程的操作，后续问题提出的朋友给出解决方案，发现<code>threading.Event</code>也大致是这样的，并且后者实现更加友好。</li>
+</ul>
+</blockquote>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 来必力 -->
+<div id="livere-comment">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzYxMi8xMDE2Nw==">
+	<script type="text/ls-javascript" id="livere-comment-js">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+       if (typeof LivereTower === 'function') { return; }
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+</div>
+</div>
+<style>
+    #livere-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/04/29/python/questions/Pandas/Pandas_drop_col_nan_percentage/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -723,6 +1009,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
     
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
 
 
 
@@ -735,6 +1025,11 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
         
     
     
