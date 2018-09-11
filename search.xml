@@ -5,13 +5,8 @@
     <entry>
       <title><![CDATA[threading.Event实现等待输入，打印输入并自动退出程序]]></title>
       <url>/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/</url>
-      <content type="html"><![CDATA[<h1 id="线程等待输入，打印输入并自动退出程序，超时自动退出"><a href="#线程等待输入，打印输入并自动退出程序，超时自动退出" class="headerlink" title="线程等待输入，打印输入并自动退出程序，超时自动退出"></a>线程等待输入，打印输入并自动退出程序，超时自动退出</h1><hr>
-<blockquote>
-<ul>
-<li>问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</li>
-</ul>
-</blockquote>
-<h2 id="最好的实现如下："><a href="#最好的实现如下：" class="headerlink" title="最好的实现如下："></a>最好的实现如下：</h2><hr>
+      <content type="html"><![CDATA[<h3 id="线程等待输入，打印输入并自动退出程序，超时自动退出"><a href="#线程等待输入，打印输入并自动退出程序，超时自动退出" class="headerlink" title="线程等待输入，打印输入并自动退出程序，超时自动退出"></a>线程等待输入，打印输入并自动退出程序，超时自动退出</h3><hr>
+<h2 id="gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"><a href="#gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。" class="headerlink" title="&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"></a>&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</h2><h4 id="最好的实现如下："><a href="#最好的实现如下：" class="headerlink" title="最好的实现如下："></a>最好的实现如下：</h4><hr>
 <pre><code>import threading
 
 # @func 输入打印函数
@@ -42,7 +37,8 @@ sleep.start()
 <li>2、当没有输入的时候，<code>event.set()</code>由于<code>input</code>阻塞不会运行，程序直到指定等待时间完成之后，<code>sleep</code>线程结束，主线程结束，由于而<code>input</code>由于<code>daemon</code>设置随之结束，不再阻塞。</li>
 </ul>
 </blockquote>
-<pre><code>import time
+<hr>
+<h4 id="个人前期实现如下："><a href="#个人前期实现如下：" class="headerlink" title="个人前期实现如下："></a>个人前期实现如下：</h4><pre><code>import time
 import sys
 import threading
 from queue import Queue
@@ -98,7 +94,7 @@ input_thread.start()
 wait_thread.start()
 </code></pre><blockquote>
 <ul>
-<li>说明：这个属于自己靠着自己了解通过<code>Queue</code>实现的一个不完美的方案，首先了解到<code>input</code>是阻塞的，所以想到了在新建一个线程来获取输入并阻塞在那里<code>set_input</code>，<code>get_input</code>和<code>my_sleep</code>完成<code>Queue</code>交互来实现目标的功能，主要流程：</li>
+<li>说明：这个属于通过<code>Queue</code>实现的一个不完美的方案，首先了解到<code>input</code>是阻塞的，所以想到了在新建一个线程来获取输入并阻塞在那里<code>set_input</code>，<code>get_input</code>和<code>my_sleep</code>完成<code>Queue</code>交互来实现目标的功能，主要流程：</li>
 <li>1 <code>set_input</code>线程里边新建一个线程，完成阻塞的<code>input</code>方法等待输入；</li>
 <li>2 随后和<code>my_sleep</code>进行数据交换，首先从队列里边<code>put</code>一个<code>Sleep</code>字符串，<code>get_input</code>判断全局变量<code>global_s</code>是否存在数据，存在数据就直接<code>put</code>一个<code>Exit</code>字符串，以告知<code>my_sleep</code>结束（这点就是导致程序在字符串输入之后也会暂停一秒猜结束的原因，而<code>my_sleep</code>里边的<code>time.sleep(1)</code>也必须在当前位置，否则会导致自己<code>put</code>的’Sleep’字符串被自己的<code>q.get()</code>给获取到，导致无法结束，这点可能可以通过两个<code>Queue</code>对象来解决，本地暂时未实现）</li>
 <li>3 如果全局变量<code>global_s</code>为空，然后<code>get_input</code>里边<code>if que_str == &#39;Exit&#39;</code>判断队列读取的不是<code>Exit</code>就继续取得下一个队列的数据。</li>
@@ -106,7 +102,7 @@ wait_thread.start()
 </ul>
 </blockquote>
 <hr>
-<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><blockquote>
+<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><blockquote>
 <ul>
 <li>看到该问题，首先想到的就是在其它线程里边有没有结束当前线程的操作，后续问题提出的朋友给出解决方案，发现<code>threading.Event</code>也大致是这样的，并且后者实现更加友好。</li>
 </ul>
