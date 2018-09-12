@@ -253,7 +253,7 @@
 
     
         <meta property="article:published_time" content="Mon Aug 27 2018 22:04:58 GMT+0800">
-        <meta property="article:modified_time" content="Tue Sep 11 2018 21:51:02 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 20:37:01 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -276,7 +276,7 @@
     "mainEntityOfPage": "https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html",
     "headline": "threading.Event实现等待输入，打印输入并自动退出程序",
     "datePublished": "Mon Aug 27 2018 22:04:58 GMT+0800",
-    "dateModified": "Tue Sep 11 2018 21:51:02 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 20:37:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -364,7 +364,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程等待输入，打印输入并自动退出程序，超时自动退出"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程等待输入，打印输入并自动退出程序，超时自动退出</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"><span class="post-toc-number"></span> <span class="post-toc-text">> * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最好的实现如下："><span class="post-toc-number">0.1.</span> <span class="post-toc-text">最好的实现如下：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#个人前期实现如下："><span class="post-toc-number">0.2.</span> <span class="post-toc-text">个人前期实现如下：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思考"><span class="post-toc-number">1.</span> <span class="post-toc-text">思考</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#线程等待输入，打印输入并自动退出程序，超时自动退出"><span class="post-toc-number">1.</span> <span class="post-toc-text">线程等待输入，打印输入并自动退出程序，超时自动退出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最终的实现如下："><span class="post-toc-number">1.1.</span> <span class="post-toc-text">最终的实现如下：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#个人前期实现如下："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">个人前期实现如下：</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思考"><span class="post-toc-number">2.</span> <span class="post-toc-text">思考</span></a></li></ol>
     </ul>
     
 
@@ -511,7 +511,13 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="线程等待输入，打印输入并自动退出程序，超时自动退出"><a href="#线程等待输入，打印输入并自动退出程序，超时自动退出" class="headerlink" title="线程等待输入，打印输入并自动退出程序，超时自动退出"></a>线程等待输入，打印输入并自动退出程序，超时自动退出</h3><hr>
-<h2 id="gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"><a href="#gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。" class="headerlink" title="&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"></a>&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</h2><h4 id="最好的实现如下："><a href="#最好的实现如下：" class="headerlink" title="最好的实现如下："></a>最好的实现如下：</h4><hr>
+<blockquote>
+<ul>
+<li>问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="最终的实现如下："><a href="#最终的实现如下：" class="headerlink" title="最终的实现如下："></a>最终的实现如下：</h4><hr>
 <pre><code>import threading
 
 # @func 输入打印函数

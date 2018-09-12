@@ -6,7 +6,13 @@
       <title><![CDATA[threading.Event实现等待输入，打印输入并自动退出程序]]></title>
       <url>/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/</url>
       <content type="html"><![CDATA[<h3 id="线程等待输入，打印输入并自动退出程序，超时自动退出"><a href="#线程等待输入，打印输入并自动退出程序，超时自动退出" class="headerlink" title="线程等待输入，打印输入并自动退出程序，超时自动退出"></a>线程等待输入，打印输入并自动退出程序，超时自动退出</h3><hr>
-<h2 id="gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"><a href="#gt-问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。" class="headerlink" title="&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。"></a>&gt; * 问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</h2><h4 id="最好的实现如下："><a href="#最好的实现如下：" class="headerlink" title="最好的实现如下："></a>最好的实现如下：</h4><hr>
+<blockquote>
+<ul>
+<li>问题：实现一个多线程程序，等待输入，计时3秒钟，检查输入就打印输入退出程序，如果超时未输入也退出程序。</li>
+</ul>
+</blockquote>
+<hr>
+<h4 id="最终的实现如下："><a href="#最终的实现如下：" class="headerlink" title="最终的实现如下："></a>最终的实现如下：</h4><hr>
 <pre><code>import threading
 
 # @func 输入打印函数
