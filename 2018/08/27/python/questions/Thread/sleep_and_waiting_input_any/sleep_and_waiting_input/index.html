@@ -63,7 +63,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="Blog">
-    <meta name="keywords" content=",python Thread Event 线程事件">
+    <meta name="keywords" content=",python Thread Event 线程 事件">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -249,11 +249,11 @@
     <meta property="og:title" content="threading.Event实现等待输入，打印输入并自动退出程序 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
-    <meta property="og:article:tag" content="python Thread Event 线程事件"> 
+    <meta property="og:article:tag" content="python Thread Event 线程 事件"> 
 
     
         <meta property="article:published_time" content="Mon Aug 27 2018 22:04:58 GMT+0800">
-        <meta property="article:modified_time" content="Wed Sep 12 2018 20:37:01 GMT+0800">
+        <meta property="article:modified_time" content="Wed Sep 12 2018 20:44:17 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -276,7 +276,7 @@
     "mainEntityOfPage": "https://returnwow.github.io/2018/08/27/python/questions/Thread/sleep_and_waiting_input_any/sleep_and_waiting_input/index.html",
     "headline": "threading.Event实现等待输入，打印输入并自动退出程序",
     "datePublished": "Mon Aug 27 2018 22:04:58 GMT+0800",
-    "dateModified": "Wed Sep 12 2018 20:37:01 GMT+0800",
+    "dateModified": "Wed Sep 12 2018 20:44:17 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -294,7 +294,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",python Thread Event 线程事件",
+    "keywords": ",python Thread Event 线程 事件",
     "description": "Blog",
 }
 </script>
@@ -439,7 +439,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/python-Thread-Event-线程事件/">python Thread Event 线程事件</a>
+        <a class="post_tag-link" href="/tags/python-Thread-Event-线程-事件/">python Thread Event 线程 事件</a>
     </ul>
     
 
@@ -543,7 +543,7 @@ input_str.start()
 sleep.start()
 </code></pre><blockquote>
 <ul>
-<li>说明：新建两个线程，其中一个为线程事件，完成等待相应的时间，另外的线程是<code>print_input</code>方法，由于<code>input</code>会导致阻塞，然后新建线程设置<code>deamon</code>为<code>True</code>，主线程结束的时候<code>input</code>阻塞线程也结束，从而实现超时结束，其中<code>event</code>的<code>wait</code>为等待，参数是超时时间，当<code>input</code>线程完成运行<code>event.set()</code>，这个方法设置一个<code>flag</code>为<code>True</code>，会唤醒其它线程，并使得<code>wait</code>函数直接返回结束，那么：</li>
+<li>说明：新建两个线程，其中一个为线程事件’threading.Event()’，完成等待相应的时间，另外的线程是<code>print_input</code>方法，由于<code>input</code>会导致阻塞，然后新建线程设置<code>deamon</code>为<code>True</code>，主线程结束的时候<code>input</code>阻塞线程也结束，从而实现超时结束，其中<code>event.wait()</code>为等待方法，参数是超时时间，当<code>input</code>接收到输入并停止阻塞，然后运行<code>event.set()</code>，这个方法会设置事件线程<code>flag</code>为<code>True</code>，而且会唤醒其它线程，并使得<code>wait</code>函数直接返回值以结束等待，那么：</li>
 <li>1、当有输入的时候，<code>input</code>不阻塞，然后运行<code>event.set()</code>，<code>event.wait()</code>直接返回，结束超时检查，最终结束程序；</li>
 <li>2、当没有输入的时候，<code>event.set()</code>由于<code>input</code>阻塞不会运行，程序直到指定等待时间完成之后，<code>sleep</code>线程结束，主线程结束，由于而<code>input</code>由于<code>daemon</code>设置随之结束，不再阻塞。</li>
 </ul>

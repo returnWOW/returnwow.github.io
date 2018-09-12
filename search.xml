@@ -38,7 +38,7 @@ input_str.start()
 sleep.start()
 </code></pre><blockquote>
 <ul>
-<li>说明：新建两个线程，其中一个为线程事件，完成等待相应的时间，另外的线程是<code>print_input</code>方法，由于<code>input</code>会导致阻塞，然后新建线程设置<code>deamon</code>为<code>True</code>，主线程结束的时候<code>input</code>阻塞线程也结束，从而实现超时结束，其中<code>event</code>的<code>wait</code>为等待，参数是超时时间，当<code>input</code>线程完成运行<code>event.set()</code>，这个方法设置一个<code>flag</code>为<code>True</code>，会唤醒其它线程，并使得<code>wait</code>函数直接返回结束，那么：</li>
+<li>说明：新建两个线程，其中一个为线程事件’threading.Event()’，完成等待相应的时间，另外的线程是<code>print_input</code>方法，由于<code>input</code>会导致阻塞，然后新建线程设置<code>deamon</code>为<code>True</code>，主线程结束的时候<code>input</code>阻塞线程也结束，从而实现超时结束，其中<code>event.wait()</code>为等待方法，参数是超时时间，当<code>input</code>接收到输入并停止阻塞，然后运行<code>event.set()</code>，这个方法会设置事件线程<code>flag</code>为<code>True</code>，而且会唤醒其它线程，并使得<code>wait</code>函数直接返回值以结束等待，那么：</li>
 <li>1、当有输入的时候，<code>input</code>不阻塞，然后运行<code>event.set()</code>，<code>event.wait()</code>直接返回，结束超时检查，最终结束程序；</li>
 <li>2、当没有输入的时候，<code>event.set()</code>由于<code>input</code>阻塞不会运行，程序直到指定等待时间完成之后，<code>sleep</code>线程结束，主线程结束，由于而<code>input</code>由于<code>daemon</code>设置随之结束，不再阻塞。</li>
 </ul>
@@ -124,7 +124,7 @@ wait_thread.start()
         
         <tags>
             
-            <tag> python Thread Event 线程事件 </tag>
+            <tag> python Thread Event 线程 事件 </tag>
             
         </tags>
         
