@@ -1336,10 +1336,10 @@ dtype: int64
     </entry>
     
     <entry>
-      <title><![CDATA[Python进制问题]]></title>
+      <title><![CDATA[Python字符串转义问题]]></title>
       <url>/2018/01/27/python/common/hex&amp;octal_problem/</url>
       <content type="html"><![CDATA[<h1 id="16进制和8进制的问题"><a href="#16进制和8进制的问题" class="headerlink" title="16进制和8进制的问题"></a>16进制和8进制的问题</h1><blockquote>
-<p>今天在网上看到有人在问<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题</p>
+<p>今天在网上看到有人在问字符串<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题</p>
 <pre><code>&gt;&gt; &#39;\x20&#39;
 &#39; &#39;
 &gt;&gt; &#39;\20&#39;
@@ -1353,7 +1353,7 @@ dtype: int64
 &#39;\\9&#39;
 &gt;&gt; &#39;\10&#39;
 &#39;\x08&#39;
-</code></pre><p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8就是<code>\10</code>。</p>
+</code></pre><p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8（对应上述’\x08’是16进制的8，转化为10进制也是8）就是<code>\10</code>。</p>
 </blockquote>
 <h2 id="ASCII码表"><a href="#ASCII码表" class="headerlink" title="ASCII码表"></a>ASCII码表</h2><blockquote>
 <p><a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin&amp;fromid=19660475&amp;fromtitle=ascii%E7%A0%81%E8%A1%A8" title="百度百科Ascii码" target="_blank" rel="external">来源百度百科</a></p>

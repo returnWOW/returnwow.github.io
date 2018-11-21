@@ -52,7 +52,7 @@
     
     <title>
         
-            Python进制问题 | 
+            Python字符串转义问题 | 
         
         LKJ Hexo Blog
     </title>
@@ -246,14 +246,14 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://returnwow.github.io/2018/01/27/python/common/hex&amp;octal_problem/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Python进制问题 | LKJ Hexo Blog">
+    <meta property="og:title" content="Python字符串转义问题 | LKJ Hexo Blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="Blog">
     <meta property="og:article:tag" content="学习 Python Hex Octal"> 
 
     
         <meta property="article:published_time" content="Sat Jan 27 2018 08:44:05 GMT+0800">
-        <meta property="article:modified_time" content="Sat Jan 27 2018 10:20:31 GMT+0800">
+        <meta property="article:modified_time" content="Wed Nov 21 2018 21:06:43 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -274,9 +274,9 @@
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "mainEntityOfPage": "https://returnwow.github.io/2018/01/27/python/common/hex&octal_problem/index.html",
-    "headline": "Python进制问题",
+    "headline": "Python字符串转义问题",
     "datePublished": "Sat Jan 27 2018 08:44:05 GMT+0800",
-    "dateModified": "Sat Jan 27 2018 10:20:31 GMT+0800",
+    "dateModified": "Wed Nov 21 2018 21:06:43 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "LKJ",
@@ -396,7 +396,7 @@
         
     
             <p class="article-headline-p">
-                Python进制问题
+                Python字符串转义问题
             </p>
         </div>
 
@@ -458,7 +458,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python进制问题&url=https://returnwow.github.io/2018/01/27/python/common/hex&amp;octal_problem/index.html&pic=https://returnwow.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Python字符串转义问题&url=https://returnwow.github.io/2018/01/27/python/common/hex&amp;octal_problem/index.html&pic=https://returnwow.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -467,7 +467,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python进制问题&url=https://returnwow.github.io/2018/01/27/python/common/hex&amp;octal_problem/index.html&via=LKJ" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Python字符串转义问题&url=https://returnwow.github.io/2018/01/27/python/common/hex&amp;octal_problem/index.html&via=LKJ" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -511,7 +511,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h1 id="16进制和8进制的问题"><a href="#16进制和8进制的问题" class="headerlink" title="16进制和8进制的问题"></a>16进制和8进制的问题</h1><blockquote>
-<p>今天在网上看到有人在问<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题</p>
+<p>今天在网上看到有人在问字符串<code>\x20</code>（16进制）和<code>\20</code>（8进制）的问题</p>
 <pre><code>&gt;&gt; &#39;\x20&#39;
 &#39; &#39;
 &gt;&gt; &#39;\20&#39;
@@ -525,7 +525,7 @@
 &#39;\\9&#39;
 &gt;&gt; &#39;\10&#39;
 &#39;\x08&#39;
-</code></pre><p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8就是<code>\10</code>。</p>
+</code></pre><p>发现<code>\8</code>打印很奇怪，<code>\10</code>打印的16进制是<code>\x08</code>，然后才想到是8进制，因为8进制表示10进制8需要进位，所以8进制的8（对应上述’\x08’是16进制的8，转化为10进制也是8）就是<code>\10</code>。</p>
 </blockquote>
 <h2 id="ASCII码表"><a href="#ASCII码表" class="headerlink" title="ASCII码表"></a>ASCII码表</h2><blockquote>
 <p><a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin&amp;fromid=19660475&amp;fromtitle=ascii%E7%A0%81%E8%A1%A8" title="百度百科Ascii码" target="_blank" rel="external">来源百度百科</a></p>
